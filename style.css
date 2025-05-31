@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #fffafa;
+  background-color: #fff8f8;
   color: #000000;
   padding-top: 10rem; /* compensar o header fixo */
 }
@@ -22,7 +22,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #fff; /* fundo branco fixo */
+  background-color: #FFFAFA; /* fundo branco fixo */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -40,7 +40,7 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 7rem;
+  margin-left: 3rem;
 }
 
 .logo-header i {
@@ -49,9 +49,10 @@ header {
 }
 
 .logo-header h1 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   color: #171717;
   font-weight: bold;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Menu de navegação */
@@ -70,7 +71,7 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #000;
-  font-size: 2.3rem;
+  font-size: 1.9rem;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -84,12 +85,12 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-right: 7rem;
+  margin-right: 3rem;
 }
 
 .acoes-header a {
   text-decoration: none;
-  font-size: 2.3rem;
+  font-size: 1.9rem;
   color: #000;
   font-weight: bold;
 }
