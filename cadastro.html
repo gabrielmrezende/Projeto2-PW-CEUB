@@ -7,7 +7,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cadastro.css" />
     <link rel="icon" type="image/png" href="imagens/logo/Logo Escuro.svg" />
     <title>Document</title>
   </head>
@@ -15,7 +15,7 @@
     <header>
       <div class="container">
         <div class="logo-header">
-          <a href=""
+          <a href="index.html"
             ><img
               src="imagens/logo/logo-white.png"
               alt="Logo Branco loja LookShop"
@@ -35,7 +35,9 @@
         </nav>
 
         <div class="acoes-header">
-          <a href="cadastro.html"><i class="bx bx-user" style="font-size: 38px"></i></a>
+          <a href="cadastro.html"
+            ><i class="bx bx-user" style="font-size: 38px"></i
+          ></a>
           <div class="carrinho">
             <i class="bx bx-cart" style="color: #000000; font-size: 35px"></i>
             <span class="carrinho-count">0</span>
@@ -46,5 +48,34 @@
         </div>
       </div>
     </header>
+
+    <main class="login-container">
+      <form class="login-form">
+        <h2>Entrar na sua conta</h2>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Digite seu email"
+          required
+        />
+
+        <div class="form-group senha-group">
+          <input type="password" id="senha" placeholder="Senha" required />
+          <i class="bx bx-show" id="toggleSenha"></i>
+        </div>
+
+        <button type="submit" class="btn-login">Iniciar Sessão</button>
+        <button type="button" class="btn-google">
+          <i class="bx bxl-google"></i> Logar com Google
+        </button>
+        <div class="cadastro-link">
+          Não possui uma conta?
+          <a href="cadastro.html">Cadastre-se</a>
+        </div>
+      </form>
+    </main>
+
+    <script src="cadastro.js"></script>
   </body>
 </html>

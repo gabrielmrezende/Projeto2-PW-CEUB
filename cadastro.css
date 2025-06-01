@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8f8;
+  color: #000000;
+  padding-top: 10rem; /* compensar o header fixo */
+}
+
+/* ============== */
+/* === HEADER === */
+/* ============== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fffafa; /* fundo branco fixo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 1rem 1rem; /* borda arredondada inferior */
+}
+
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 3rem;
+}
+
+.logo-header i {
+  font-size: 6rem;
+  color: #000;
+}
+
+.logo-header h1 {
+  font-size: 3.2rem;
+  color: #171717;
+  font-weight: bold;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Menu de navegação */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.9rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #e91e63;
+}
+
+/* Ações no topo */
+.acoes-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 3rem;
+}
+
+.acoes-header a {
+  text-decoration: none;
+  font-size: 1.9rem;
+  color: #000;
+  font-weight: bold;
+}
+
+.carrinho {
+  position: relative;
+}
+
+.carrinho i {
+  font-size: 3.5rem;
+}
+
+.carrinho-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #000000;
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 80%;
+}
+
+#botao-tema {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#botao-tema i {
+  font-size: 2.4rem;
+}
+
+/* === LOGIN === */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 10rem); /* altura total da tela menos o header */
+  padding: 2rem;
+  background-color: #fff8f8;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 5rem 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* animação de entrada */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.login-form h2 {
+  font-size: 3rem; /* aumentado */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #171717;
+}
+
+.login-form label {
+  font-size: 1.8rem; /* aumentado */
+  color: #333;
+}
+
+.login-form input {
+  font-size: 1.8rem; /* aumentado */
+  padding: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.btn-login {
+  background-color: #000;
+  color: white;
+  font-size: 2rem; /* aumentado */
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.senha-group {
+  position: relative;
+}
+
+.senha-group input {
+  width: 100%;
+  padding-right: 4rem; /* espaço para o ícone */
+}
+
+.senha-group i {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+  color: #828181;
+}
+
+.btn-google {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  font-size: 1.8rem; /* aumentado */
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: background 0.3s, border 0.3s;
+}
+
+.btn-google i {
+  font-size: 2.2rem; /* levemente aumentado */
+}
+
+.cadastro-link {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cadastro-link a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  transition: color 0.3s;
+  font-size: 1.2rem;
+}
+
+.cadastro-link a:hover {
+  color: #c2185b;
+  text-decoration: underline;
+}
+
+/* === TRANSIÇÃO === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
