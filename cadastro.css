@@ -217,6 +217,10 @@ nav a i {
   transition: border 0.3s;
 }
 
+label {
+  transform: translateY(60%);
+}
+
 .btn-login {
   background-color: #000;
   color: white;
