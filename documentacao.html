@@ -7,8 +7,8 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="documentacao.css" />
+    <link rel="stylesheet" href="header.css" />
     <link rel="icon" type="image/png" href="imagens/logo/Logo Escuro.svg" />
     <title>Document</title>
   </head>
@@ -16,7 +16,7 @@
     <header>
       <div class="container">
         <div class="logo-header">
-          <a href=""
+          <a href="index.html"
             ><img
               id="logo-header"
               src="imagens/logo/logo-white.png"
@@ -59,7 +59,7 @@
               </ul>
             </li>
 
-            <li><a href="documentacao.html">Documentação</a></li>
+            <li><a href="#">Documentação</a></li>
           </ul>
         </nav>
 
@@ -80,45 +80,34 @@
       </div>
     </header>
 
-    <main>
-      <section class="carrossel">
-        <div class="slides">
-          <img
-            src="imagens/logo/praia.jpg"
-            alt="Banner 1"
-            class="slide ativo"
-          />
-          <img
-            src="imagens/logo/restaurante.jpg"
-            alt="Banner 2"
-            class="slide"
-          />
-          <img src="imagens/logo/logo-black.png" alt="Banner 3" class="slide" />
-        </div>
+    <section class="integrantes">
+        <h2>Integrantes</h2>
+        <p>Gabriel Mafaldo Rezende - 22350300</p>
+        <p>Júlia Coelho Rodrigues - 22350300</p>
+        <p>Ricardo de Souza Moaes - 22350874</p>
+        <p>Victor Hitchely - 22452781</p>
+        <p>Tiago Hack - 22350300</p>
+    </section>
 
-        <button class="btn anterior">&#10094;</button>
-        <button class="btn proximo">&#10095;</button>
+    <section class="documentacao">
+      <div class="container">
+        <h2>Documentação</h2>
+        <ul class="lista-documentos">
+          <li>
+            <a href="documentos/PW - PROJETO FINAL - 2º bim.pdf" download>
+              <i class="bx bx-download"></i> Instruções Projeto final
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/gabrielmrezende/Projeto2-PW-CEUB">
+              <i class="bx bxl-github" style="color: #000000"></i> GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="indicadores">
-          <span class="indicador ativo"></span>
-          <span class="indicador"></span>
-          <span class="indicador"></span>
-        </div>
-      </section>
-
-      <section class="masculino-categoria" id="masculino">
-        <h2>MASCULINO</h2>
-      </section>
-    </main>
-
-    <a href="#">
-      <img
-        class="logo-whatsapp"
-        src="https://www.hashtagtreinamentos.com/wp-content/uploads/2023/06/whatsapp-logo-2.png"
-        alt="Logo do WhatsApp"
-      />
-    </a>
-    <script src="script.js"></script>
+    <script src="documentacao.js"></script>
     <script src="header.js"></script>
   </body>
 </html>
