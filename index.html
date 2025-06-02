@@ -17,6 +17,7 @@
         <div class="logo-header">
           <a href=""
             ><img
+              id="logo-header"
               src="imagens/logo/logo-white.png"
               alt="Logo Branco loja LookShop"
               style="width: 130px; height: 70px"
@@ -64,8 +65,10 @@
             ><i class="bx bx-user" style="font-size: 38px"></i
           ></a>
           <div class="carrinho">
-            <i class="bx bx-cart" style="color: #000000; font-size: 35px"></i>
-            <span class="carrinho-count">0</span>
+            <a href="">
+              <i class="bx bx-cart" style="color: #000000; font-size: 35px"></i>
+              <span class="carrinho-count">0</span>
+            </a>
           </div>
           <button id="botao-tema">
             <i class="bx bx-moon" style="font-size: 30px"></i>
@@ -73,5 +76,41 @@
         </div>
       </div>
     </header>
+
+    <main>
+      <section class="carrossel">
+        <div class="slides">
+          <img
+            src="imagens/logo/praia.jpg"
+            alt="Banner 1"
+            class="slide ativo"
+          />
+          <img
+            src="imagens/logo/restaurante.jpg"
+            alt="Banner 2"
+            class="slide"
+          />
+          <img src="imagens/logo/logo-black.png" alt="Banner 3" class="slide" />
+        </div>
+
+        <button class="btn anterior">&#10094;</button>
+        <button class="btn proximo">&#10095;</button>
+
+        <div class="indicadores">
+          <span class="indicador ativo"></span>
+          <span class="indicador"></span>
+          <span class="indicador"></span>
+        </div>
+      </section>
+    </main>
+
+    <a href="#">
+      <img
+        class="logo-whatsapp"
+        src="https://www.hashtagtreinamentos.com/wp-content/uploads/2023/06/whatsapp-logo-2.png"
+        alt="Logo do WhatsApp"
+      />
+    </a>
+    <script src="script.js"></script>
   </body>
 </html>

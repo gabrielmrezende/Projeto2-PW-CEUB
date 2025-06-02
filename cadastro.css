@@ -87,6 +87,15 @@ nav a i {
   vertical-align: middle;
 }
 
+.has-dropdown a i {
+  transition: transform 0.3s ease;
+}
+
+/* Quando estiver com setinha para cima, rotaciona */
+.has-dropdown:hover a i {
+  transform: rotate(180deg);
+}
+
 .has-dropdown {
   position: relative;
 }
@@ -169,6 +178,72 @@ nav a i {
 
 #botao-tema i {
   font-size: 2.4rem;
+}
+
+/* ========================== */
+/* === ALTERAÇÃO DO TEMA === */
+/* ========================== */
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Header escuro */
+body.dark-theme header {
+  background-color: #1b1b1b;
+}
+
+/* Elementos que mudam para branco no modo escuro */
+body.dark-theme .logo-header h1,
+body.dark-theme nav a,
+body.dark-theme .acoes-header a,
+body.dark-theme .carrinho i,
+body.dark-theme #botao-tema i {
+  color: #ffffff !important;
+}
+
+body.dark-theme .login-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-theme .login-form {
+  background-color: #474747;
+  color: #ffffff;
+}
+
+body.dark-theme .login-form h2,
+body.dark-theme .login-form label,
+body.dark-theme .cadastro-link,
+body.dark-theme .cadastro-link a {
+  color: #ffffff;
+}
+
+body.dark-theme .login-form input {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark-theme .senha-group i {
+  color: #dddddd;
+}
+
+body.dark-theme .btn-login {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-theme .btn-google {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-color: #555;
+}
+
+/* Ícone do botão de tema com transição */
+#botao-tema i {
+  font-size: 2.4rem;
+  color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* === LOGIN === */
@@ -282,7 +357,7 @@ label {
   text-decoration: none;
   margin-left: 0.5rem;
   transition: color 0.3s;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .cadastro-link a:hover {

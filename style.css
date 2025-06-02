@@ -12,6 +12,35 @@ body {
   padding-top: 10rem; /* compensar o header fixo */
 }
 
+/* ========================== */
+/* === ALTERAÇÃO DO TEMA === */
+/* ========================== */
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Header escuro */
+body.dark-theme header {
+  background-color: #1b1b1b;
+}
+
+/* Elementos que mudam para branco no modo escuro */
+body.dark-theme .logo-header h1,
+body.dark-theme nav a,
+body.dark-theme .acoes-header a,
+body.dark-theme .carrinho i,
+body.dark-theme #botao-tema i {
+  color: #ffffff !important;
+}
+
+/* Ícone do botão de tema com transição */
+#botao-tema i {
+  font-size: 2.4rem;
+  color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 /* ============== */
 /* === HEADER === */
 /* ============== */
@@ -87,6 +116,15 @@ nav a i {
   vertical-align: middle;
 }
 
+.has-dropdown a i {
+  transition: transform 0.3s ease;
+}
+
+/* Quando estiver com setinha para cima, rotaciona */
+.has-dropdown:hover a i {
+  transform: rotate(180deg);
+}
+
 .has-dropdown {
   position: relative;
 }
@@ -126,7 +164,6 @@ nav a i {
 .has-dropdown:hover .dropdown {
   display: block;
 }
-
 
 /* Ações no topo */
 .acoes-header {
@@ -170,4 +207,105 @@ nav a i {
 
 #botao-tema i {
   font-size: 2.4rem;
+}
+
+/* ============ */
+/* === MAIN === */
+/* ============ */
+
+/* ================== */
+/* === CARROSSEL ==== */
+/* ================== */
+
+.carrossel {
+  position: relative;
+  max-width: 95%;
+  height: 500px;
+  overflow: hidden;
+  margin: 2rem auto; /* centraliza horizontalmente */
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.btn.anterior {
+  left: 1rem;
+}
+
+.btn.proximo {
+  right: 1rem;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.7rem;
+}
+
+.indicador {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicador.ativo {
+  background-color: #ffffff;
+}
+
+/* Dark theme ajustes */
+body.dark-theme .btn {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .indicador {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-theme .indicador.ativo {
+  background-color: #fff;
+}
+
+.logo-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  height: 100px;
+  width: 100px;
+  z-index: 1000;
 }
