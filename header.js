@@ -10,11 +10,11 @@ function aplicarTemaSalvo() {
   if (temaSalvo === "escuro") {
     body.classList.add("dark-theme");
     icone.classList.replace("bx-moon", "bx-sun");
-    logo.src = "imagens/logo/logo-black.png";
+    logo.src = "assets/images/logo-black.png";
   } else {
     body.classList.remove("dark-theme");
     icone.classList.replace("bx-sun", "bx-moon");
-    logo.src = "imagens/logo/logo-white.png";
+    logo.src = "assets/images/logo-white.png";
   }
 }
 
@@ -34,11 +34,11 @@ botaoTema.addEventListener("click", () => {
     // Alterna ícone e logo + salva o tema no localStorage
     if (body.classList.contains("dark-theme")) {
       icone.classList.replace("bx-moon", "bx-sun");
-      logo.src = "imagens/logo/logo-black.png";
+      logo.src = "assets/images/logo-black.png";
       localStorage.setItem("tema", "escuro");
     } else {
       icone.classList.replace("bx-sun", "bx-moon");
-      logo.src = "imagens/logo/logo-white.png";
+      logo.src = "assets/images/logo-white.png";
       localStorage.setItem("tema", "claro");
     }
 
