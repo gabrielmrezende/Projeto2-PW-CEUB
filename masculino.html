@@ -17,22 +17,20 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../authentication/login.css" />
-    <link rel="stylesheet" href="../authentication/cadastro.css" />
-    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="masculino.css">
     <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-    <title>LookShop - Cadastro</title>
+    <title>LookShop - A sua loja de roupas</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logo-header">
-          <a href="../index.html"
+          <a href=""
             ><img
               id="logo-header"
-              src="../assets/images/logo-white.png"
+              src="assets/images/logo-white.png"
               alt="Logo Branco loja LookShop"
               style="width: 130px; height: 70px"
           /></a>
@@ -44,7 +42,9 @@
             <li><a href="#">Sobre nós</a></li>
 
             <li class="has-dropdown">
-              <a href="#"> Masculino <i class="bx bx-chevron-down"></i> </a>
+              <a href="#masculino">
+                Masculino <i class="bx bx-chevron-down"></i>
+              </a>
               <ul class="dropdown">
                 <li><a href="#">Camisetas</a></li>
                 <li><a href="#">Calças</a></li>
@@ -70,14 +70,17 @@
               </ul>
             </li>
 
-            <li><a href="../documentacao.html">Documentação</a></li>
+            <li><a href="documentacao.html">Documentação</a></li>
           </ul>
         </nav>
 
         <div class="acoes-header">
-          <a href="./login.html"
-            ><i class="bx bx-user" style="font-size: 30px"></i
-          ></a>
+          <div class="usuario-area">
+            <a href="./authentication/login.html">
+              <i class="bx bx-user" style="font-size: 30px"></i>
+            </a>
+            <!-- Aqui serão inseridos o nome e o botão logout -->
+          </div>
           <div class="carrinho">
             <a href="">
               <i class="bx bx-cart" style="color: #000000; font-size: 30px"></i>
@@ -91,58 +94,19 @@
       </div>
     </header>
 
-    <main class="login-container">
-      <form class="login-form">
-        <h2>Cadastro</h2>
-        <label for="name">Nome Completo:</label>
-        <input type="text" id="name" placeholder="Digite seu nome" required />
 
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Digite seu email"
-          required
-        />
+    <!-- WhatsApp fixo -->
+    <a href="#">
+      <img
+        class="logo-whatsapp"
+        src="https://www.hashtagtreinamentos.com/wp-content/uploads/2023/06/whatsapp-logo-2.png"
+        alt="Logo do WhatsApp"
+      />
+    </a>
 
-        <label for="password">Senha:</label>
-
-        <div class="form-group senha-group">
-          <input type="password" id="senha" placeholder="Senha" required />
-          <i class="bx bx-show" id="toggleSenha"></i>
-          <!-- primeira senha -->
-        </div>
-
-        <label for="password">Confirmar Senha:</label>
-
-        <div class="form-group senha-group">
-          <input
-            type="password"
-            id="confirmar-senha"
-            placeholder="Confirmar Senha"
-            required
-          />
-          <i class="bx bx-show" id="toggleConfirmarSenha"></i>
-          <!-- confirmar senha -->
-        </div>
-
-        <div id="erros-container">
-          <p id="mensagem-erro" class="erro"></p>
-          <p id="email-erro" class="erro"></p>
-        </div>
-
-        <button type="submit" id="btn-cadastrar" class="btn-login">
-          Cadastrar
-        </button>
-        <div class="cadastro-link">
-          Ja possui uma conta?
-          <a href="../authentication/login.html">Iniciar Sessão</a>
-        </div>
-      </form>
-    </main>
-
-    <script src="../authentication/login.js"></script>
-    <script src="../authentication/cadastro.js"></script>
-    <script src="/header.js"></script>
+    <!-- Scripts JS -->
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script src="masculino.js"></script>
   </body>
 </html>
