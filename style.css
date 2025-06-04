@@ -11,7 +11,7 @@
   max-width: 95%;
   height: 500px;
   overflow: hidden;
-  margin: 2rem auto; /* centraliza horizontalmente */
+  margin: 2rem auto;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -77,7 +77,7 @@
   background-color: #ffffff;
 }
 
-/* Dark theme ajustes */
+/* ====== DARK THEME AJUSTES ====== */
 body.dark-theme .btn {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -90,57 +90,21 @@ body.dark-theme .indicador.ativo {
   background-color: #fff;
 }
 
-/* Nome do usuário no Header */
-.usuario-logado {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: auto;
-  font-weight: bold;
-}
-
-.usuario-logado .btn-logout {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.usuario-logado .btn-logout:hover {
-  background-color: #cc0000;
-}
-
-.acoes-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.usuario-nome {
-  font-weight: 600;
-  font-size: 1.6rem;
-  color: #333;
-}
-
-.btn-logout {
-  background-color: transparent;
-  color: #d00;
-  border: 1px solid #d00;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s, color 0.3s;
-}
-
-.btn-logout:hover {
-  background-color: #d00;
+body.dark-theme .usuario-nome {
   color: #fff;
 }
 
+body.dark-theme .btn-logout {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark-theme .btn-logout:hover {
+  background-color: #666;
+}
+
+/* ====== USUÁRIO LOGADO ====== */
 .usuario-area {
   display: flex;
   align-items: center;
@@ -149,6 +113,7 @@ body.dark-theme .indicador.ativo {
 
 .usuario-nome {
   font-weight: 600;
+  font-size: 1.6rem;
   color: #333;
   margin-left: 0.3rem;
 }
@@ -169,18 +134,99 @@ body.dark-theme .indicador.ativo {
   color: #fff;
 }
 
-/* MASCULINO */
+.usuario-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  margin-left: auto;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.usuario-nome-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.usuario-nome-dropdown .usuario-nome {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.usuario-nome-dropdown .usuario-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 100px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.usuario-nome-dropdown:hover .usuario-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.usuario-dropdown li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.usuario-dropdown li:hover {
+  background-color: #f2f2f2;
+}
+
+/* Tema escuro */
+body.dark-theme .usuario-nome-dropdown .usuario-nome {
+  color: #fff;
+}
+
+body.dark-theme .usuario-dropdown {
+  background-color: #333;
+  border-color: #555;
+}
+
+body.dark-theme .usuario-dropdown li {
+  color: #fff;
+}
+
+body.dark-theme .usuario-dropdown li:hover {
+  background-color: #444;
+}
+
+/* ====== MASCULINO CATEGORIA ====== */
 .masculino-categoria {
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  height: 100px; /* Altura fixa */
+  justify-content: center;
+  align-items: center;
+  height: 100px;
   color: rgb(255, 255, 255);
   font-size: 5rem;
   text-align: center;
   background-color: #000000;
 }
 
+/* WHATSAPP LOGO FIXA */
 .logo-whatsapp {
   position: fixed;
   bottom: 2rem;

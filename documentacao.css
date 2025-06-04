@@ -1,7 +1,7 @@
 /* == DOCUMENTAÇÃO == */
 .documentacao {
   padding: 5rem 2rem;
-  background-color: #f9f9f9;
+  background-color: #f3f3f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,14 +47,40 @@
 
 .lista-documentos a i {
   font-size: 2.4rem;
-  color: #de1111;
+  color: currentColor; /* Herdar a cor do texto */
 }
 
 .lista-documentos a:hover {
-  color: #de1111;
-  font-weight: 520;
-  transform: translateY(-3px);
+  color: #000000;
+  font-weight: 600;
+  transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tema escuro para documentação */
+body.dark-theme .documentacao {
+  background-color: #1e1e1e;
+}
+
+body.dark-theme .documentacao h2 {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+body.dark-theme .lista-documentos a {
+  background-color: #393939;
+  color: #ffffff; /* Cor do texto — e dos ícones via currentColor */
+  border: 1px solid #444;
+}
+
+.dark-theme .lista-documentos a i {
+  font-size: 2.8rem;
+  color: #000000;
+}
+
+body.dark-theme .lista-documentos a:hover {
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 /* == INTEGRANTES == */
@@ -83,4 +109,18 @@
   width: 100%;
   max-width: 500px;
   transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Tema escuro para integrantes */
+body.dark-theme .integrantes {
+  background-color: #303030;
+}
+
+body.dark-theme .integrantes h2 {
+  color: #ffffff;
+  text-decoration-color: #fbfbfb;
+}
+
+body.dark-theme .integrantes p {
+  color: #f0f0f0;
 }

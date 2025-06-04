@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Saudação com nome do usuário
+  // Saudação com nome do usuário e dropdown
   const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
   const acoesHeader = document.querySelector(".acoes-header");
 
@@ -69,36 +69,32 @@ window.addEventListener("DOMContentLoaded", () => {
       primeiroNome.charAt(0).toUpperCase() +
       primeiroNome.slice(1).toLowerCase();
 
-    const saudacao = document.createElement("span");
-    saudacao.textContent = `Olá, ${nomeFormatado}`;
-    saudacao.classList.add("usuario-nome");
-    saudacao.style.marginLeft = "10px";
-    saudacao.style.fontWeight = "bold";
-    saudacao.style.color = "#000";
+    const usuarioArea = document.createElement("div");
+    usuarioArea.classList.add("usuario-area");
 
-    const btnLogout = document.createElement("button");
-    btnLogout.textContent = "Sair";
-    btnLogout.classList.add("btn-logout");
-    btnLogout.style.marginLeft = "10px";
-    btnLogout.style.padding = "4px 8px";
-    btnLogout.style.border = "none";
-    btnLogout.style.cursor = "pointer";
-    btnLogout.style.background = "#e0e0e0";
-    btnLogout.style.borderRadius = "5px";
+    const saudacao = document.createElement("div");
+    saudacao.classList.add("usuario-nome-dropdown");
+    saudacao.innerHTML = `
+      <span class="usuario-nome">Olá, ${nomeFormatado}</span>
+      <ul class="usuario-dropdown">
+        <li id="logout-opcao">Sair</li>
+      </ul>
+    `;
 
-    btnLogout.addEventListener("click", () => {
+    usuarioArea.appendChild(saudacao);
+
+    const iconeLogin = acoesHeader.querySelector("a[href*='login']");
+    if (iconeLogin) {
+      iconeLogin.replaceWith(usuarioArea);
+    } else {
+      acoesHeader.insertBefore(usuarioArea, acoesHeader.firstChild);
+    }
+
+    // Evento de logout
+    const logoutOpcao = saudacao.querySelector("#logout-opcao");
+    logoutOpcao.addEventListener("click", () => {
       localStorage.removeItem("usuarioLogado");
       location.reload();
     });
-
-    // Substitui o ícone de login
-    const iconeLogin = acoesHeader.querySelector("a[href*='login']");
-    if (iconeLogin) {
-      iconeLogin.replaceWith(saudacao);
-    } else {
-      acoesHeader.insertBefore(saudacao, acoesHeader.firstChild);
-    }
-
-    acoesHeader.appendChild(btnLogout);
   }
 });
