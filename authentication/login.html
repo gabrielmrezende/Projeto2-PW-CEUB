@@ -3,13 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (function () {
+        const temaSalvo = localStorage.getItem("tema");
+        if (temaSalvo === "escuro") {
+          document.documentElement.classList.add("dark-theme");
+        }
+      })();
+    </script>
+
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="icon" type="image/png" href="assets/icons/Logo Escuro.svg" />
+    <link rel="stylesheet" href="../authentication/login.css" />
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <title>LookShop - Login</title>
@@ -18,10 +28,10 @@
     <header>
       <div class="container">
         <div class="logo-header">
-          <a href="index.html"
+          <a href="../index.html"
             ><img
               id="logo-header"
-              src="assets/images/logo-white.png"
+              src="../assets/images/logo-white.png"
               alt="Logo Branco loja LookShop"
               style="width: 130px; height: 70px"
           /></a>
@@ -59,12 +69,12 @@
               </ul>
             </li>
 
-            <li><a href="documentacao.html">Documentação</a></li>
+            <li><a href="../documentacao.html">Documentação</a></li>
           </ul>
         </nav>
 
         <div class="acoes-header">
-          <a href="login.html"
+          <a href="./login.html"
             ><i class="bx bx-user" style="font-size: 30px"></i
           ></a>
           <div class="carrinho">
@@ -83,7 +93,7 @@
     <main class="login-container">
       <form class="login-form">
         <h2>Entrar na sua conta</h2>
-        <label for="email">Email</label>
+        <label for="email">Email:</label>
         <input
           type="email"
           id="email"
@@ -91,12 +101,14 @@
           required
         />
 
-        <label for="password">Senha</label>
+        <label for="password">Senha:</label>
 
         <div class="form-group senha-group">
           <input type="password" id="senha" placeholder="Senha" required />
           <i class="bx bx-show" id="toggleSenha"></i>
         </div>
+
+        <p id="mensagem-erro" class="erro-login"></p>
 
         <button type="submit" class="btn-login">Iniciar Sessão</button>
         <button type="button" class="btn-google">
@@ -104,12 +116,12 @@
         </button>
         <div class="cadastro-link">
           Não possui uma conta?
-          <a href="login.html">Cadastre-se</a>
+          <a href="../authentication/cadastro.html">Cadastre-se</a>
         </div>
       </form>
     </main>
 
-    <script src="login.js"></script>
-    <script src="header.js"></script>
+    <script src="../authentication/login.js"></script>
+    <script src="/header.js"></script>
   </body>
 </html>

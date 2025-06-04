@@ -17,20 +17,21 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="documentacao.css" />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="../authentication/login.css" />
+    <link rel="stylesheet" href="../header.css" />
     <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
-    <title>LookShop - Documentação</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <title>LookShop - Cadastro</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logo-header">
-          <a href="index.html"
+          <a href="../index.html"
             ><img
               id="logo-header"
-              src="assets/images/logo-white.png"
+              src="../assets/images/logo-white.png"
               alt="Logo Branco loja LookShop"
               style="width: 130px; height: 70px"
           /></a>
@@ -42,9 +43,7 @@
             <li><a href="#">Sobre nós</a></li>
 
             <li class="has-dropdown">
-              <a href="#masculino">
-                Masculino <i class="bx bx-chevron-down"></i>
-              </a>
+              <a href="#"> Masculino <i class="bx bx-chevron-down"></i> </a>
               <ul class="dropdown">
                 <li><a href="#">Camisetas</a></li>
                 <li><a href="#">Calças</a></li>
@@ -70,12 +69,12 @@
               </ul>
             </li>
 
-            <li><a href="#">Documentação</a></li>
+            <li><a href="../documentacao.html">Documentação</a></li>
           </ul>
         </nav>
 
         <div class="acoes-header">
-          <a href="./authentication/login.html"
+          <a href="./login.html"
             ><i class="bx bx-user" style="font-size: 30px"></i
           ></a>
           <div class="carrinho">
@@ -91,39 +90,54 @@
       </div>
     </header>
 
-    <section class="integrantes">
-      <h2>Integrantes</h2>
-      <p>Gabriel Mafaldo Rezende - 22350300</p>
-      <p>Júlia Coelho Rodrigues - 22350300</p>
-      <p>Ricardo de Souza Moaes - 22350874</p>
-      <p>Victor Hitchely - 22452781</p>
-      <p>Tiago Hack - 22350300</p>
-    </section>
+    <main class="login-container">
+      <form class="login-form">
+        <h2>Cadastro</h2>
+        <label for="name">Nome Completo:</label>
+        <input type="text" id="name" placeholder="Digite seu nome" required />
 
-    <section class="documentacao">
-      <div class="container">
-        <h2>Documentação</h2>
-        <ul class="lista-documentos">
-          <li>
-            <a href="assets/documents/PW - PROJETO FINAL - 2º bim.pdf" target="_blank" download>
-              <i class="bx bx-download"></i> Instruções Projeto final
-            </a>
-          </li>
-          <li>
-            <a href="assets/images/Wireframe LookShop.png" target="_blank" download>
-              <i class="bx bx-image"></i> Wireframe LookShop
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/gabrielmrezende/Projeto2-PW-CEUB" target="_blank">
-              <i class="bx bxl-github" style="color: #000000"></i> GitHub
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Digite seu email"
+          required
+        />
 
-    <script src="documentacao.js"></script>
-    <script src="header.js"></script>
+        <label for="password">Senha:</label>
+
+        <div class="form-group senha-group">
+          <input type="password" id="senha" placeholder="Senha" required />
+          <i class="bx bx-show" id="toggleSenha"></i>
+          <!-- primeira senha -->
+        </div>
+
+        <label for="password">Confirmar Senha:</label>
+
+        <div class="form-group senha-group">
+          <input
+            type="password"
+            id="confirmar-senha"
+            placeholder="Confirmar Senha"
+            required
+          />
+          <i class="bx bx-show" id="toggleConfirmarSenha"></i>
+          <!-- confirmar senha -->
+        </div>
+
+        <button type="submit" id="btn-cadastrar" class="btn-login">
+          Cadastrar
+        </button>
+        <p id="mensagem-erro" style="color: red; margin-top: 10px"></p>
+        <div class="cadastro-link">
+          Ja possui uma conta?
+          <a href="../authentication/login.html">Iniciar Sessão</a>
+        </div>
+      </form>
+    </main>
+
+    <script src="../authentication/login.js"></script>
+    <script src="../authentication/cadastro.js"></script>
+    <script src="/header.js"></script>
   </body>
 </html>

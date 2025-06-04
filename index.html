@@ -3,13 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (function () {
+        const temaSalvo = localStorage.getItem("tema");
+        if (temaSalvo === "escuro") {
+          document.documentElement.classList.add("dark-theme");
+        }
+      })();
+    </script>
+
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="header.css" />
-    <link rel="icon" type="image/png" href="assets/icons/Logo Escuro.svg" />
+    <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
     <title>LookShop - A sua loja de roupas</title>
   </head>
   <body>
@@ -64,9 +74,12 @@
         </nav>
 
         <div class="acoes-header">
-          <a href="login.html"
-            ><i class="bx bx-user" style="font-size: 30px"></i
-          ></a>
+          <div class="usuario-area">
+            <a href="./authentication/login.html">
+              <i class="bx bx-user" style="font-size: 30px"></i>
+            </a>
+            <!-- Aqui serão inseridos o nome e o botão logout -->
+          </div>
           <div class="carrinho">
             <a href="">
               <i class="bx bx-cart" style="color: #000000; font-size: 30px"></i>

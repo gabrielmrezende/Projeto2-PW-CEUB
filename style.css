@@ -90,6 +90,85 @@ body.dark-theme .indicador.ativo {
   background-color: #fff;
 }
 
+/* Nome do usuário no Header */
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.usuario-logado .btn-logout {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.usuario-logado .btn-logout:hover {
+  background-color: #cc0000;
+}
+
+.acoes-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.usuario-nome {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #d00;
+  border: 1px solid #d00;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-logout:hover {
+  background-color: #d00;
+  color: #fff;
+}
+
+.usuario-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.usuario-nome {
+  font-weight: 600;
+  color: #333;
+  margin-left: 0.3rem;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #d00;
+  border: 1px solid #d00;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #d00;
+  color: #fff;
+}
+
 /* MASCULINO */
 .masculino-categoria {
   display: flex;

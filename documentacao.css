@@ -12,12 +12,14 @@
 .documentacao .container {
   max-width: 800px;
   width: 100%;
+  flex-direction: column;
 }
 
 .documentacao h2 {
   font-size: 3.6rem;
   margin-bottom: 3rem;
   color: #171717;
+  text-decoration: underline;
 }
 
 .lista-documentos {
