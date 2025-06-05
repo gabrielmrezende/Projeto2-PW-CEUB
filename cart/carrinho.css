@@ -2,7 +2,7 @@
   position: absolute;
   right: 0;
   top: 50px;
-  width: 20rem; /* 320px */
+  width: 38rem; /* 320px */
   max-height: 25rem; /* 400px */
   background-color: var(--bg-card, #fff);
   border: 1px solid #ccc;
@@ -16,7 +16,7 @@
 
 .carrinho-dropdown h3 {
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   margin-bottom: 0.75rem;
   padding: 0.5rem;
   background-color: var(--bg-light, #f9f9f9);
@@ -41,7 +41,7 @@
 
 .total-carrinho {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   text-align: right;
   margin-bottom: 1rem;
   color: #222;
