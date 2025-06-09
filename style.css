@@ -2,6 +2,61 @@
 /* === MAIN === */
 /* ============ */
 
+/*===============================*/
+/*  Variables de cor e tipografia */
+/*===============================*/
+:root {
+  --preto-principal: #1b1b1b;
+  --branco-principal: #fffafa;
+  --cinza-escuro: #555555;
+  --cinza-claro: #cecece;
+  --vermelho-hover: #dcc43a;
+
+  --font-principal: 'Helvetica World', Arial, sans-serif;
+
+  --h1-size: 8.3rem; /* 62pt */
+  --h2-size: 2.6rem; /* 19.5pt */
+  --h3-size: 3.8rem; /* 28pt */
+  --h4-size: 3.2rem; /* 24pt */
+  --h5-size: 1.4rem; /* 10.6pt */
+  --corpo-regular: 1.9rem; /* 14pt */
+  --corpo-principal: 2.1rem; /* 16pt */
+  --corpo-secundario: 1.1rem; /* 8.5pt */
+  --corpo-terciario: 1.3rem; /* 9.5pt */
+  --corpo-direitos: 0.8rem; /* 6pt */
+}
+
+body {
+  font-family: var(--font-principal) !important;
+  color: var(--preto-principal) !important;
+  background-color: var(--branco-principal);
+}
+
+h1 {
+  font-size: var(--h1-size);
+  color: var(--preto-principal);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  color: var(--preto-principal);
+}
+
+h3 {
+  font-size: var(--h3-size);
+  color: var(--preto-principal);
+}
+
+h4 {
+  font-size: var(--h4-size);
+  color: var(--preto-principal);
+}
+
+h5 {
+  font-size: var(--h5-size);
+  color: var(--preto-principal);
+}
+
 /* ================== */
 /* === CARROSSEL ==== */
 /* ================== */
@@ -37,14 +92,15 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
+  background-color: rgba(27, 27, 27, 0.4);
+  color: var(--branco-principal);
   border: none;
   font-size: 2.5rem;
   cursor: pointer;
   padding: 0.5rem 1rem;
   z-index: 1;
   border-radius: 50%;
+  font-family: var(--font-principal);
 }
 
 .btn.anterior {
@@ -74,7 +130,7 @@
 }
 
 .indicador.ativo {
-  background-color: #ffffff;
+  background-color: var(--branco-principal);
 }
 
 /* ====== DARK THEME AJUSTES ====== */
@@ -87,21 +143,21 @@ body.dark-theme .indicador {
 }
 
 body.dark-theme .indicador.ativo {
-  background-color: #fff;
+  background-color: var(--branco-principal);
 }
 
 body.dark-theme .usuario-nome {
-  color: #fff;
+  color: var(--branco-principal);
 }
 
 body.dark-theme .btn-logout {
-  background-color: #444;
-  color: #fff;
-  border-color: #666;
+  background-color: var(--cinza-escuro);
+  color: var(--branco-principal);
+  border-color: var(--cinza-escuro);
 }
 
 body.dark-theme .btn-logout:hover {
-  background-color: #666;
+  background-color: var(--cinza-escuro);
 }
 
 /* ====== USUÁRIO LOGADO ====== */
@@ -113,25 +169,27 @@ body.dark-theme .btn-logout:hover {
 
 .usuario-nome {
   font-weight: 600;
-  font-size: 1.6rem;
-  color: #333;
+  font-size: var(--corpo-principal);
+  color: var(--preto-principal);
   margin-left: 0.3rem;
+  font-family: var(--font-principal);
 }
 
 .btn-logout {
   background-color: transparent;
-  color: #d00;
-  border: 1px solid #d00;
+  color: var(--vermelho-hover);
+  border: 1px solid var(--vermelho-hover);
   padding: 4px 8px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: var(--corpo-direitos);
   transition: 0.3s ease;
+  font-family: var(--font-principal);
 }
 
 .btn-logout:hover {
-  background-color: #d00;
-  color: #fff;
+  background-color: var(--vermelho-hover);
+  color: var(--branco-principal);
 }
 
 .usuario-area {
@@ -153,8 +211,9 @@ body.dark-theme .btn-logout:hover {
 
 .usuario-nome-dropdown .usuario-nome {
   font-weight: 600;
-  font-size: 1.6rem;
-  color: #333;
+  font-size: var(--corpo-principal);
+  color: var(--preto-principal);
+  font-family: var(--font-principal);
 }
 
 .usuario-nome-dropdown .usuario-dropdown {
@@ -166,8 +225,8 @@ body.dark-theme .btn-logout:hover {
   top: 100%;
   left: 50%;
   transform: translate(-50%, -10px);
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: var(--branco-principal);
+  border: 1px solid var(--cinza-claro);
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
@@ -188,30 +247,31 @@ body.dark-theme .btn-logout:hover {
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 1.3rem;
-  color: #333;
+  font-size: var(--corpo-terciario);
+  color: var(--preto-principal);
+  font-family: var(--font-principal);
 }
 
 .usuario-dropdown li:hover {
-  background-color: #f2f2f2;
+  background-color: var(--cinza-claro);
 }
 
 /* Tema escuro */
 body.dark-theme .usuario-nome-dropdown .usuario-nome {
-  color: #fff;
+  color: var(--branco-principal);
 }
 
 body.dark-theme .usuario-dropdown {
-  background-color: #333;
-  border-color: #555;
+  background-color: var(--preto-principal);
+  border-color: var(--cinza-escuro);
 }
 
 body.dark-theme .usuario-dropdown li {
-  color: #fff;
+  color: var(--branco-principal);
 }
 
 body.dark-theme .usuario-dropdown li:hover {
-  background-color: #444;
+  background-color: var(--cinza-escuro);
 }
 
 /* ====== MASCULINO CATEGORIA ====== */
@@ -220,10 +280,10 @@ body.dark-theme .usuario-dropdown li:hover {
   justify-content: center;
   align-items: center;
   height: 100px;
-  color: rgb(255, 255, 255);
-  font-size: 5rem;
+  color: var(--branco-principal);
+  font-size: var(--h1-size);
   text-align: center;
-  background-color: #000000;
+  background-color: var(--preto-principal);
 }
 
 /* WHATSAPP LOGO FIXA */
