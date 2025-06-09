@@ -1,0 +1,297 @@
+/* ============ */
+/* === MAIN === */
+/* ============ */
+
+/*===============================*/
+/*  Variables de cor e tipografia */
+/*===============================*/
+:root {
+  --preto-principal: #1b1b1b;
+  --branco-principal: #fffafa;
+  --cinza-escuro: #555555;
+  --cinza-claro: #cecece;
+  --vermelho-hover: #dcc43a;
+
+  --font-principal: 'Helvetica World', Arial, sans-serif;
+
+  --h1-size: 8.3rem; /* 62pt */
+  --h2-size: 2.6rem; /* 19.5pt */
+  --h3-size: 3.8rem; /* 28pt */
+  --h4-size: 3.2rem; /* 24pt */
+  --h5-size: 1.4rem; /* 10.6pt */
+  --corpo-regular: 1.9rem; /* 14pt */
+  --corpo-principal: 2.1rem; /* 16pt */
+  --corpo-secundario: 1.1rem; /* 8.5pt */
+  --corpo-terciario: 1.3rem; /* 9.5pt */
+  --corpo-direitos: 0.8rem; /* 6pt */
+}
+
+body {
+  font-family: var(--font-principal) !important;
+  color: var(--preto-principal) !important;
+  background-color: var(--branco-principal);
+}
+
+h1 {
+  font-size: var(--h1-size);
+  color: var(--preto-principal);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  color: var(--branco-principal);
+}
+
+h3 {
+  font-size: var(--h3-size);
+  color: var(--preto-principal);
+}
+
+h4 {
+  font-size: var(--h4-size);
+  color: var(--preto-principal);
+}
+
+h5 {
+  font-size: var(--h5-size);
+  color: var(--preto-principal);
+}
+
+/* ================== */
+/* === CARROSSEL ==== */
+/* ================== */
+
+.carrossel {
+  position: relative;
+  max-width: 95%;
+  height: 500px;
+  overflow: hidden;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(27, 27, 27, 0.4);
+  color: var(--branco-principal);
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 1;
+  border-radius: 50%;
+  font-family: var(--font-principal);
+}
+
+.btn.anterior {
+  left: 1rem;
+}
+
+.btn.proximo {
+  right: 1rem;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.7rem;
+}
+
+.indicador {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicador.ativo {
+  background-color: var(--branco-principal);
+}
+
+/* ====== DARK THEME AJUSTES ====== */
+body.dark-theme .btn {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .indicador {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-theme .indicador.ativo {
+  background-color: var(--branco-principal);
+}
+
+body.dark-theme .usuario-nome {
+  color: var(--branco-principal);
+}
+
+body.dark-theme .btn-logout {
+  background-color: var(--cinza-escuro);
+  color: var(--branco-principal);
+  border-color: var(--cinza-escuro);
+}
+
+body.dark-theme .btn-logout:hover {
+  background-color: var(--cinza-escuro);
+}
+
+/* ====== USUÁRIO LOGADO ====== */
+.usuario-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.usuario-nome {
+  font-weight: 600;
+  font-size: var(--corpo-principal);
+  color: var(--preto-principal);
+  margin-left: 0.3rem;
+  font-family: var(--font-principal);
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: var(--vermelho-hover);
+  border: 1px solid var(--vermelho-hover);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--corpo-direitos);
+  transition: 0.3s ease;
+  font-family: var(--font-principal);
+}
+
+.btn-logout:hover {
+  background-color: var(--vermelho-hover);
+  color: var(--branco-principal);
+}
+
+.usuario-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  margin-left: auto;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.usuario-nome-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.usuario-nome-dropdown .usuario-nome {
+  font-weight: 600;
+  font-size: var(--corpo-principal);
+  color: var(--preto-principal);
+  font-family: var(--font-principal);
+}
+
+.usuario-nome-dropdown .usuario-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  background-color: var(--branco-principal);
+  border: 1px solid var(--cinza-claro);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 100px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.usuario-nome-dropdown:hover .usuario-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.usuario-dropdown li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: var(--corpo-terciario);
+  color: var(--preto-principal);
+  font-family: var(--font-principal);
+}
+
+.usuario-dropdown li:hover {
+  background-color: var(--cinza-claro);
+}
+
+/* Tema escuro */
+body.dark-theme .usuario-nome-dropdown .usuario-nome {
+  color: var(--branco-principal);
+}
+
+body.dark-theme .usuario-dropdown {
+  background-color: var(--preto-principal);
+  border-color: var(--cinza-escuro);
+}
+
+body.dark-theme .usuario-dropdown li {
+  color: var(--branco-principal);
+}
+
+body.dark-theme .usuario-dropdown li:hover {
+  background-color: var(--cinza-escuro);
+}
+
+/* ====== MASCULINO CATEGORIA ====== */
+.masculino-categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: var(--branco-principal);
+  font-size: var(--h1-size);
+  text-align: center;
+  background-color: var(--preto-principal);
+}
+
+/* WHATSAPP LOGO FIXA */
+.logo-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  height: 100px;
+  width: 100px;
+  z-index: 1000;
+}
