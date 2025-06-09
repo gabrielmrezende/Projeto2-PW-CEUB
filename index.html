@@ -14,86 +14,17 @@
     </script>
 
     <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart/carrinho.css" />
     <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
     <title>LookShop - A sua loja de roupas</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="logo-header">
-          <a href=""
-            ><img
-              id="logo-header"
-              src="assets/images/logo-white.png"
-              alt="Logo Branco loja LookShop"
-              style="width: 130px; height: 70px"
-          /></a>
-          <h1>LookShop</h1>
-        </div>
-
-        <nav>
-          <ul>
-            <li><a href="#">Sobre nós</a></li>
-
-            <li class="has-dropdown">
-              <a href="masculino.html">
-                Masculino <i class="bx bx-chevron-down"></i>
-              </a>
-              <ul class="dropdown">
-                <li><a href="#">Camisetas</a></li>
-                <li><a href="#">Calças</a></li>
-                <li><a href="#">Tênis</a></li>
-              </ul>
-            </li>
-
-            <li class="has-dropdown">
-              <a href="#"> Feminino <i class="bx bx-chevron-down"></i> </a>
-              <ul class="dropdown">
-                <li><a href="#">Vestidos</a></li>
-                <li><a href="#">Blusas</a></li>
-                <li><a href="#">Sapatos</a></li>
-              </ul>
-            </li>
-
-            <li class="has-dropdown">
-              <a href="#"> Infantil <i class="bx bx-chevron-down"></i> </a>
-              <ul class="dropdown">
-                <li><a href="#">Meninos</a></li>
-                <li><a href="#">Meninas</a></li>
-                <li><a href="#">Bebês</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#">Contato</a></li>
-            <li><a href="documentacao.html">Documentação</a></li>
-          </ul>
-        </nav>
-
-        <div class="acoes-header">
-          <div class="usuario-area">
-            <a href="./authentication/login.html">
-              <i class="bx bx-user" style="font-size: 30px"></i>
-            </a>
-            <!-- Aqui serão inseridos o nome e o botão logout -->
-          </div>
-          <div class="carrinho">
-            <a href="">
-              <i class="bx bx-cart" style="color: #000000; font-size: 30px"></i>
-              <span class="carrinho-count">0</span>
-            </a>
-          </div>
-          <button id="botao-tema">
-            <i class="bx bx-moon" style="font-size: 30px"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
+    <div id="header"></div>
     <main>
       <section class="carrossel">
         <div class="slides">
@@ -150,5 +81,6 @@
     </a>
     <script src="script.js"></script>
     <script src="header.js"></script>
+    <script src="cart/carrinho.js"></script>
   </body>
 </html>
