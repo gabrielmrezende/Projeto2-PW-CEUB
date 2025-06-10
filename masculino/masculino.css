@@ -135,7 +135,7 @@ body.dark-theme .preco span {
   /* box-shadow: 1px 3px 10px 3px rgb(0 0 0 / 7%); */
   transition: transform 0.3s;
   max-width: 90%; /* Garante que se mantenha dentro da coluna */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .produto-card:hover {
@@ -204,6 +204,11 @@ body.dark-theme .filtros-laterais {
 body.dark-theme .filtro-grupo h4,
 body.dark-theme .filtro-grupo label {
   color: #eee; /* texto claro */
+}
+
+body.dark-theme .filtro-grupo,
+body.dark-theme .filtros-laterais h3 {
+  border-color: #505050;
 }
 
 body.dark-theme .filtro-grupo input[type="checkbox"] {
