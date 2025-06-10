@@ -20,6 +20,15 @@
   font-family: "PT Sans Narrow", sans-serif;
 }
 
+/* DARK THEME */
+body.dark-theme .texto-sobre-nos {
+  color: rgb(235, 235, 235);
+}
+
+body.dark-theme .titulo-sobre-nos {
+    color: rgb(255, 255, 255);
+}
+
 /* Animação de entrada */
 @keyframes fadeSlideIn {
   0% {
