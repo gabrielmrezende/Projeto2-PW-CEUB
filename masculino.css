@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=WDXL+Lubrifont+TC&display=swap");
+
 .secao-masculino {
   display: flex;
   gap: 1.25rem; /* 20px */
@@ -12,7 +14,7 @@
   height: calc(100vh - 100px);
   width: 23rem; /* 288px */
   background-color: var(--bg-card, #f5f5f5);
-  padding: 1.5rem;
+  padding: 3.5rem;
   border-radius: 0 10px 10px 0;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
@@ -27,7 +29,7 @@
 }
 
 .filtros-laterais h3 {
-  font-size: 2.3rem; /* Aumentado */
+  font-size: 2.1rem; /* Aumentado */
   margin-bottom: 2rem;
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.5rem;
@@ -36,18 +38,19 @@
 .filtro-grupo {
   margin-bottom: 1.5rem;
   width: 100%;
+  border-bottom: solid 1px #ccc;
 }
 
 .filtro-grupo h4 {
-  font-size: 1.8rem; /* Aumentado */
-  margin-bottom: 1.4rem;
+  font-size: 1.55rem; /* Aumentado */
+  margin-bottom: 1.3rem;
   color: #333;
 }
 
 .filtro-grupo label {
   display: block;
   margin-bottom: 0.8rem;
-  font-size: 1.4rem; /* Aumentado */
+  font-size: 1.2rem; /* Aumentado */
   cursor: pointer;
 }
 
@@ -96,7 +99,7 @@
 }
 
 /* CONTEÚDO AJUSTADO PARA CABER AO LADO DOS FILTROS FIXOS */
-.preco span{
+.preco span {
   text-decoration: line-through;
 }
 
@@ -120,19 +123,25 @@ body.dark-theme .preco span {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px; /* ou o valor que desejar entre os cards */
-  padding: 20px;
+  padding: 15px 80px;
   justify-items: stretch;
 }
 
 .produto-card {
-  background-color: rgb(248, 248, 248);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  padding-top: 1.9rem;
+  /* background-color: rgb(248, 248, 248); */
+  border-radius: 0.8rem;
+  padding: 1.5rem 0rem;
   text-align: center;
-  box-shadow: 1px 3px 10px 3px rgb(0 0 0 / 7%);
+  /* box-shadow: 1px 3px 10px 3px rgb(0 0 0 / 7%); */
   transition: transform 0.3s;
   max-width: 90%; /* Garante que se mantenha dentro da coluna */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 6px 18px 6px rgb(0 0 0 / 10%);
+  background-color: rgb(248, 248, 248);
 }
 
 .produto-card img {
@@ -141,11 +150,13 @@ body.dark-theme .preco span {
   border-radius: 0.2rem;
   aspect-ratio: 4 / 5;
   width: auto;
+  border: solid 5px black;
 }
 
 .produto-card h3 {
   margin: 1.2rem 0 0.8rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 .produto-card h3:hover {
@@ -154,21 +165,22 @@ body.dark-theme .preco span {
 }
 
 .produto-card p {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
   margin-top: 0.75rem;
 }
 
 .produto-card button {
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 3.2rem;
   background-color: #000000;
   color: white;
   border: none;
   border-radius: 0.375rem;
   cursor: pointer;
   transition: background 0.3s;
-  font-size: 1.4rem;
-  margin: 1rem;
+  font-size: 1.3rem;
+  margin: 12px 10px 5px 10px;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 .produto-card button:hover {
@@ -209,7 +221,7 @@ body.dark-theme .filtro-grupo input[type="checkbox"]:checked {
 }
 
 body.dark-theme .produto-card {
-  background-color: #141414; /* fundo do card escuro */
+  background-color: #252525; /* fundo do card escuro */
   color: #fff; /* texto branco */
 }
 
@@ -220,7 +232,7 @@ body.dark-theme .produto-card p {
 
 body.dark-theme .produto-card button {
   background-color: rgb(238, 238, 238);
-  color: black
+  color: black;
 }
 
 body.dark-theme .produto-card button:hover {

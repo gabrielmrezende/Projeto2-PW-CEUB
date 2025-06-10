@@ -221,9 +221,10 @@ body.dark-theme .usuario-dropdown li:hover {
   align-items: center;
   height: 100px;
   color: rgb(255, 255, 255);
-  font-size: 5rem;
+  font-size: 4.5rem;
   text-align: center;
   background-color: #000000;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* WHATSAPP LOGO FIXA */
