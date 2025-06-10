@@ -123,7 +123,7 @@ body.dark-theme .preco span {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px; /* ou o valor que desejar entre os cards */
-  padding: 15px 80px;
+  padding: 20px 80px;
   justify-items: stretch;
 }
 
@@ -220,9 +220,8 @@ body.dark-theme .filtro-grupo input[type="checkbox"]:checked {
   border-color: #ccc; /* borda clara */
 }
 
-body.dark-theme .produto-card {
-  background-color: #252525; /* fundo do card escuro */
-  color: #fff; /* texto branco */
+body.dark-theme .produto-card:hover {
+  background-color: #171717;
 }
 
 body.dark-theme .produto-card h3,
