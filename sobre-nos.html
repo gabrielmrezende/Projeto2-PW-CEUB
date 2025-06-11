@@ -97,23 +97,31 @@
 
     <main>
       <div class="sobre-nos-container">
-        <h1 class="titulo-sobre-nos invisivel">Sobre Nós</h1>
-        <p class="texto-sobre-nos invisivel">
-          A LookShop nasceu com a missão de transformar o modo como você se
-          veste e se expressa no dia a dia. Acreditamos que a moda vai além da
-          aparência: ela representa atitude, liberdade e identidade. Nossa loja
-          oferece roupas esportivas modernas, confortáveis e com design
-          exclusivo, pensadas para acompanhar você em todos os momentos — do
-          treino à rotina urbana. Trabalhamos com curadoria rigorosa de
-          produtos, sempre atentos às tendências e à qualidade dos tecidos e
-          acabamentos. Além disso, buscamos oferecer uma experiência de compra
-          prática e segura, com um site intuitivo, filtros personalizados e
-          atendimento rápido. Valorizamos a inclusão e temos categorias para o
-          público masculino, feminino e infantil, atendendo todas as idades com
-          estilo e personalidade. Na LookShop, você encontra muito mais do que
-          roupas: encontra confiança, versatilidade e motivação para viver o seu
-          melhor. Seja bem-vindo à nossa comunidade!
-        </p>
+        <div class="texto-sobre-nos-bloco">
+          <h1 class="titulo-sobre-nos invisivel">Sobre Nós</h1>
+          <p class="texto-sobre-nos invisivel">
+            A LookShop nasceu com a missão de transformar o modo como você se
+            veste e se expressa no dia a dia. Acreditamos que a moda vai além da
+            aparência: ela representa atitude, liberdade e identidade. Nossa
+            loja oferece roupas esportivas modernas, confortáveis e com design
+            exclusivo, pensadas para acompanhar você em todos os momentos — do
+            treino à rotina urbana. Trabalhamos com curadoria rigorosa de
+            produtos, sempre atentos às tendências e à qualidade dos tecidos e
+            acabamentos. Além disso, buscamos oferecer uma experiência de compra
+            prática e segura, com um site intuitivo, filtros personalizados e
+            atendimento rápido. Valorizamos a inclusão e temos categorias para o
+            público masculino, feminino e infantil, atendendo todas as idades
+            com estilo e personalidade. Na LookShop, você encontra muito mais do
+            que roupas: encontra confiança, versatilidade e motivação para viver
+            o seu melhor. Seja bem-vindo à nossa comunidade!
+          </p>
+        </div>
+
+        <img
+          class="imagem-sobre-nos"
+          src="assets/images/imagens produtos.svg"
+          alt="Produtos"
+        />
       </div>
     </main>
 
@@ -129,15 +137,19 @@
       window.addEventListener("DOMContentLoaded", () => {
         const titulo = document.querySelector(".titulo-sobre-nos");
         const texto = document.querySelector(".texto-sobre-nos");
+        const imagem = document.querySelector(".imagem-sobre-nos");
 
-        // Adiciona as classes com delay para animar visivelmente
         setTimeout(() => {
           titulo.classList.add("animar");
-        }, 100); // Começa rápido
+        }, 100);
 
         setTimeout(() => {
           texto.classList.add("animar");
-        }, 500); // Pequeno atraso
+        }, 500);
+
+        setTimeout(() => {
+          imagem.classList.add("animar");
+        }, 500);
       });
     </script>
     <script src="script.js"></script>

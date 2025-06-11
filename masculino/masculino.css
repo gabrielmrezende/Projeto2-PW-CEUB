@@ -9,9 +9,9 @@
 /* FILTROS FIXOS NA LATERAL */
 .filtros-laterais {
   position: fixed;
-  top: 120px;
+  top: 160px;
   left: -10px;
-  height: calc(76vh - -40px);
+  height: calc(68vh - -40px);
   width: 21rem;
   background-color: white;
   padding: 3.5rem;
@@ -218,7 +218,7 @@ body:not(.filtros-aberto) .produtos-grid {
 /* Botão fixo */
 .toggle-filtros {
   position: fixed;
-  top: 50%;
+  top: 22%;
   left: 0.5rem;
   transform: translateY(-50%);
   background: var(--bg-card, #f5f5f5);
