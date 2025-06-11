@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Seleciona os produtos e os checkboxes de filtro
   const produtos = document.querySelectorAll(".produto-card");
   const checkboxes = document.querySelectorAll(
     ".filtros-laterais input[type='checkbox']"
   );
+  const produtosGrid = document.querySelector(".produtos-grid");
+  const btnFiltros = document.getElementById("toggle-filtros");
 
-  // Dados dos produtos para filtro (você pode ampliar com mais produtos e atributos)
   const produtosDados = [
     {
       element: produtos[0],
@@ -72,9 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // Função para atualizar a exibição dos produtos conforme filtros
   function aplicarFiltros() {
-    // Pega filtros selecionados
     const filtrosSelecionados = {
       categoria: [],
       tamanho: [],
@@ -85,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkboxes.forEach((checkbox) => {
       if (checkbox.checked) {
         const label = checkbox.parentElement.textContent.trim().toLowerCase();
-        // Organiza filtros por grupo usando o texto do label
+
         if (["camisetas", "calças", "tênis"].includes(label)) {
           filtrosSelecionados.categoria.push(label);
         } else if (["p", "m", "g", "gg", "42", "43"].includes(label)) {
@@ -102,24 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Exibe produtos que passam nos filtros (se não selecionar filtro em um grupo, ignora grupo)
     produtosDados.forEach(({ element, categoria, tamanho, cor, preco }) => {
-      // Categoria
       const catOK =
         filtrosSelecionados.categoria.length === 0 ||
         filtrosSelecionados.categoria.includes(categoria);
 
-      // Tamanho
       const tamOK =
         filtrosSelecionados.tamanho.length === 0 ||
         filtrosSelecionados.tamanho.some((t) => tamanho.includes(t));
 
-      // Cor
       const corOK =
         filtrosSelecionados.cor.length === 0 ||
         filtrosSelecionados.cor.some((c) => cor.includes(c));
 
-      // Preço
       let precoOK = false;
       if (filtrosSelecionados.preco.length === 0) precoOK = true;
       else {
@@ -135,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Mostrar se todos os filtros OK
       if (catOK && tamOK && corOK && precoOK) {
         element.style.display = "";
       } else {
@@ -144,11 +136,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Adiciona evento para todos checkboxes
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", aplicarFiltros);
   });
 
-  // Aplica filtros na carga da página para caso haja algum pré-selecionado
   aplicarFiltros();
+
+  // Alterna filtros, grid e botão
+  btnFiltros.addEventListener("click", () => {
+    const filtrosAtivo = document.body.classList.toggle("filtros-aberto");
+
+    if (filtrosAtivo) {
+      produtosGrid.classList.remove("filtros-fechados");
+      btnFiltros.classList.add("filtros-abertos");
+    } else {
+      produtosGrid.classList.add("filtros-fechados");
+      btnFiltros.classList.remove("filtros-abertos");
+    }
+  });
 });
+

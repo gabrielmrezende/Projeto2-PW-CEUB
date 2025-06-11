@@ -9,23 +9,20 @@
 /* FILTROS FIXOS NA LATERAL */
 .filtros-laterais {
   position: fixed;
-  top: 100px;
-  left: 3px;
-  height: calc(100vh - 100px);
-  width: 23rem; /* 288px */
-  background-color: var(--bg-card, #f5f5f5);
+  top: 120px;
+  left: -10px;
+  height: calc(76vh - -40px);
+  width: 21rem;
+  background-color: white;
   padding: 3.5rem;
   border-radius: 0 10px 10px 0;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  overflow-y: visible;
   z-index: 10;
-  justify-content: center;
-
-  /* Centralização */
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: left;
+  flex-direction: column;
 }
 
 .filtros-laterais h3 {
@@ -113,18 +110,20 @@ body.dark-theme .preco span {
 }
 
 .categoria-masculino h2 {
-  font-size: 3rem;
+  font-size: 3.8rem;
   text-align: center;
   text-shadow: 2px 0 5px rgba(0, 0, 0, 0.178);
   text-decoration: underline;
+  margin-bottom: 1rem;
 }
 
 .produtos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* ou o valor que desejar entre os cards */
-  padding: 20px 80px;
+  column-gap: 25px;
+  padding: 20px 35px;
   justify-items: stretch;
+  row-gap: 10px;
 }
 
 .produto-card {
@@ -134,28 +133,28 @@ body.dark-theme .preco span {
   text-align: center;
   /* box-shadow: 1px 3px 10px 3px rgb(0 0 0 / 7%); */
   transition: transform 0.3s;
-  max-width: 90%; /* Garante que se mantenha dentro da coluna */
+  max-width: 100%; /* Garante que se mantenha dentro da coluna */
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .produto-card:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 6px 18px 6px rgb(0 0 0 / 10%);
-  background-color: rgb(248, 248, 248);
+  transform: translateY(-4px) scale(1.05);
+  /* box-shadow: 0 6px 18px 6px rgb(0 0 0 / 10%);
+  background-color: rgb(248, 248, 248); */
 }
 
 .produto-card img {
   height: 100%;
   max-height: 300px;
   border-radius: 0.2rem;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 5;
   width: auto;
-  border: solid 5px black;
+  border: solid 4px black;
 }
 
 .produto-card h3 {
   margin: 1.2rem 0 0.8rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: "PT Sans Narrow", sans-serif;
 }
 
@@ -165,7 +164,7 @@ body.dark-theme .preco span {
 }
 
 .produto-card p {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-top: 0.75rem;
 }
@@ -185,6 +184,121 @@ body.dark-theme .preco span {
 
 .produto-card button:hover {
   background-color: #313131;
+}
+
+.produtos-grid {
+  opacity: 1;
+  transition: grid-template-columns 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    column-gap 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    row-gap 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando os filtros estiverem abertos (3 colunas) */
+body.filtros-aberto .produtos-grid {
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0px;
+  padding: 20px;
+  justify-items: stretch;
+  row-gap: 3px;
+}
+
+/* Quando os filtros estiverem fechados (4 colunas) */
+body:not(.filtros-aberto) .produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 0px;
+  padding: 20px;
+  justify-items: stretch;
+  row-gap: 20px;
+}
+
+/* Botão fixo */
+.toggle-filtros {
+  position: fixed;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  background: var(--bg-card, #f5f5f5);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.toggle-filtros i {
+  font-size: 2.4rem;
+}
+
+/* Estado inicial: filtros escondidos */
+.filtros-laterais {
+  transform: translateX(-100%);
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Estado aberto ativado */
+body.filtros-aberto .filtros-laterais {
+  transform: translateX(0);
+}
+
+/* Botão muda de lugar */
+#toggle-filtros {
+  position: fixed;
+  top: 20%;
+  left: 0rem;
+  transform: translateY(-50%);
+  background: #323232;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0px 5px 5px 0px;
+  box-shadow: 2px 2px 6px rgb(0 0 0 / 25%);
+  cursor: pointer;
+  z-index: 1001;
+  transition: left 0.3s ease;
+}
+
+body.dark-theme #toggle-filtros {
+  background-color: white;
+}
+
+#toggle-filtros.filtros-abertos {
+  left: 19rem;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.fa-bars:before,
+.fa-navicon:before {
+  color: rgb(236, 236, 236);
+}
+
+body.dark-theme .fa-bars:before,
+.fa-navicon:before {
+  color: black;
+}
+
+/* Ajuste do conteúdo quando aberto */
+body.filtros-aberto .categoria-masculino {
+  margin-left: calc(23rem + 1rem);
+  transition: margin-left 0.4s ease;
+}
+
+/* Estado fechado: conteúdo ocupa tela inteira */
+body:not(.filtros-aberto) .categoria-masculino {
+  margin-left: 1rem;
+}
+
+/* Quando os filtros estiverem fechados */
+.produtos-grid.filtros-fechados {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0px;
+  padding: 20px 100px;
+  justify-items: stretch;
+  row-gap: 3px;
 }
 
 /* Tema escuro aplicado quando body tem .dark-theme */
