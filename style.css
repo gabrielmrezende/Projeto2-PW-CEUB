@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* ============ */
 /* === MAIN === */
 /* ============ */
@@ -224,7 +228,154 @@ body.dark-theme .usuario-dropdown li:hover {
   font-size: 4.5rem;
   text-align: center;
   background-color: #000000;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+.modelos-masculinos {
+  flex: 1;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 25px;
+  padding: 20px 35px;
+  justify-items: stretch;
+  row-gap: 10px;
+
+  max-width: 80%; /* ajuste conforme o tamanho desejado */
+  margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.card-produto {
+  /* background-color: rgb(248, 248, 248); */
+  border-radius: 0.8rem;
+  padding: 1.5rem 0rem;
+  text-align: center;
+  /* box-shadow: 1px 3px 10px 3px rgb(0 0 0 / 7%); */
+  transition: transform 0.3s;
+  max-width: 100%; /* Garante que se mantenha dentro da coluna */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.card-produto img {
+  height: 100%;
+  max-height: 300px;
+  border-radius: 0.2rem;
+  aspect-ratio: 5 / 5;
+  width: auto;
+  border: solid 4px black;
+}
+
+.card-produto h3 {
+  margin: 1.2rem 0 0.8rem;
+  font-size: 1.8rem;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.card-produto h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.card-produto p {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  font-family: "Lato", sans-serif;
+}
+
+.card-produto button {
+  padding: 0.625rem 3.2rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1.6rem;
+  margin: 12px 10px 5px 10px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.card-produto buttom:hover {
+  background-color: #313131;
+}
+
+/* FOOTER */
+footer {
+  background-color: #222;
+  color: #eee;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-container > div {
+  flex: 1 1 220px;
+  margin: 10px;
+}
+
+.footer-about p {
+  line-height: 1.6;
+  font-size: 1.8rem;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social ul li {
+  margin-bottom: 8px;
+}
+
+.footer-social ul li a {
+  color: #eee;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-social ul li a:hover {
+  color: #1da1f2;
+}
+
+.footer-location iframe {
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 1.2rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px 10px;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Ícones Boxicons ajustes no footer */
+.footer-social i {
+  font-size: 20px;
 }
 
 /* WHATSAPP LOGO FIXA */

@@ -10,9 +10,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #fdf8f8;
+  background-color: #fffdfd;
   color: #000000;
   padding-top: 10rem; /* compensar o header fixo */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* ========================== */
