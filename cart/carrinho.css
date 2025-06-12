@@ -11,8 +11,20 @@
   overflow-y: auto;
   z-index: 1000;
   border-radius: 0.5rem;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.carrinho-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 
 .carrinho-dropdown h3 {
   margin-top: 0;
@@ -32,19 +44,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 0.75rem;
   padding: 0.5rem;
-  background-color: var(--bg-light, #f9f9f9);
+  background-color: rgb(243, 243, 243);
   border-radius: 0.3rem;
+  font-family: 'PT Sans Narrow';
 }
 
 .total-carrinho {
-  font-weight: bold;
-  font-size: 2.2rem;
+  font-weight: 400;
+  font-size: 2.5rem;
   text-align: right;
   margin-bottom: 1rem;
   color: #222;
+  font-family: 'PT Sans Narrow';
+}
+
+#total-carrinho {
+  font-size: 2.1rem;
+  font-weight: 500;
 }
 
 .carrinho-dropdown button {
@@ -54,7 +73,7 @@
   padding: 0.6rem 1.2rem;
   cursor: pointer;
   border-radius: 0.4rem;
-  font-size: 1rem;
+  font-size: 2rem;
   width: 100%;
   transition: background 0.3s ease;
 }

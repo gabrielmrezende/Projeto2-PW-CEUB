@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=WDXL+Lubrifont+TC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Sans+Narrow:wght@400;700&family=WDXL+Lubrifont+TC&display=swap");
 
 .secao-masculino {
   display: flex;
@@ -164,9 +165,10 @@ body.dark-theme .preco span {
 }
 
 .produto-card p {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-top: 0.75rem;
+  font-family: "Lato", sans-serif;
 }
 
 .produto-card button {
@@ -177,7 +179,7 @@ body.dark-theme .preco span {
   border-radius: 0.375rem;
   cursor: pointer;
   transition: background 0.3s;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   margin: 12px 10px 5px 10px;
   font-family: "PT Sans Narrow", sans-serif;
 }
@@ -200,7 +202,7 @@ body.filtros-aberto .produtos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 0px;
-  padding: 20px;
+  padding: 20px 65px;
   justify-items: stretch;
   row-gap: 3px;
 }
@@ -210,7 +212,7 @@ body:not(.filtros-aberto) .produtos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 0px;
-  padding: 20px;
+  padding: 20px 100px;
   justify-items: stretch;
   row-gap: 20px;
 }
@@ -339,17 +341,13 @@ body.dark-theme .filtro-grupo input[type="checkbox"]:checked {
   border-color: #ccc; /* borda clara */
 }
 
-body.dark-theme .produto-card:hover {
-  background-color: #171717;
-}
-
 body.dark-theme .produto-card h3,
 body.dark-theme .produto-card p {
   color: #fff; /* texto branco */
 }
 
 body.dark-theme .produto-card button {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
   color: black;
 }
 

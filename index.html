@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./cart/carrinho.css">
     <link rel="stylesheet" href="header.css" />
     <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
     <title>LookShop - A sua loja de roupas</title>
@@ -82,10 +83,19 @@
             <!-- Aqui serão inseridos o nome e o botão logout -->
           </div>
           <div class="carrinho">
-            <a href="">
-              <i class="bx bx-cart" style="color: #000000; font-size: 30px"></i>
+            <a href="#" id="btn-carrinho">
+              <i class="bx bx-cart" style="font-size: 30px"></i>
               <span class="carrinho-count">0</span>
             </a>
+            <div class="carrinho-dropdown" id="carrinho-dropdown">
+              <h3>Carrinho</h3>
+              <ul id="lista-carrinho"></ul>
+              <div class="total-carrinho">
+                Total: R$ <span id="total-carrinho">0.00</span>
+              </div>
+              <button id="btn-fechar-carrinho">Fechar</button>
+            </div>
+          </div>
           </div>
           <button id="botao-tema">
             <i class="bx bx-moon" style="font-size: 30px"></i>
@@ -150,5 +160,6 @@
     </a>
     <script src="script.js"></script>
     <script src="header.js"></script>
+    <script src="cart/carrinho.js"></script>
   </body>
 </html>

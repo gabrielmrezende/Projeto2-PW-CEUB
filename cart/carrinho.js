@@ -3,11 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const contadorCarrinho = document.querySelector(".carrinho-count");
   const listaCarrinho = document.getElementById("lista-carrinho");
   const totalCarrinho = document.getElementById("total-carrinho");
+  const botaoCarrinho = document.getElementById("btn-carrinho");
+  const dropdown = document.getElementById("carrinho-dropdown");
+  const fecharBtn = document.getElementById("btn-fechar-carrinho");
 
+  // Inicializa carrinho
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
   function atualizarContador() {
-    const totalItens = carrinho.reduce((soma, item) => soma + item.quantidade, 0);
+    const totalItens = carrinho.reduce(
+      (soma, item) => soma + item.quantidade,
+      0
+    );
     contadorCarrinho.textContent = totalItens;
   }
 
@@ -19,9 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     listaCarrinho.innerHTML = "";
     let total = 0;
 
-    carrinho.forEach(item => {
+    carrinho.forEach((item) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nome} x${item.quantidade} - R$ ${(item.preco * item.quantidade).toFixed(2)}`;
+      li.textContent = `${item.nome} x${item.quantidade} - R$ ${(
+        item.preco * item.quantidade
+      ).toFixed(2)}`;
       listaCarrinho.appendChild(li);
       total += item.preco * item.quantidade;
     });
@@ -29,13 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
     totalCarrinho.textContent = total.toFixed(2);
   }
 
-  botoesAdicionar.forEach(botao => {
+  botoesAdicionar.forEach((botao) => {
     botao.addEventListener("click", () => {
       const id = botao.getAttribute("data-id");
       const nome = botao.getAttribute("data-nome");
       const preco = parseFloat(botao.getAttribute("data-preco"));
 
-      const itemExistente = carrinho.find(prod => prod.id === id);
+      const itemExistente = carrinho.find((prod) => prod.id === id);
 
       if (itemExistente) {
         itemExistente.quantidade += 1;
@@ -53,17 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarContador();
   atualizarDropdown();
 
-  // Dropdown toggle
-  const botaoCarrinho = document.getElementById("btn-carrinho");
-  const dropdown = document.getElementById("carrinho-dropdown");
-  const fecharBtn = document.getElementById("btn-fechar-carrinho");
-
+  // Mostrar/ocultar carrinho com animação
   botaoCarrinho.addEventListener("click", (e) => {
     e.preventDefault();
-    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+    dropdown.classList.toggle("show");
   });
 
   fecharBtn.addEventListener("click", () => {
-    dropdown.style.display = "none";
+    dropdown.classList.remove("show");
   });
 });
