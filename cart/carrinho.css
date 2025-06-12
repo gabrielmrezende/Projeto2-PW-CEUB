@@ -3,7 +3,7 @@
   right: 0;
   top: 50px;
   width: 38rem; /* 320px */
-  max-height: 25rem; /* 400px */
+  max-height: 30rem; /* 400px */
   background-color: var(--bg-card, #fff);
   border: 1px solid #ccc;
   padding: 1.2rem;
@@ -12,7 +12,7 @@
   z-index: 1000;
   border-radius: 0.5rem;
   font-family: "Segoe UI", Tahoma, sans-serif;
-  
+
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;

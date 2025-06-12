@@ -72,3 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdown.classList.remove("show");
   });
 });
+
+document.addEventListener("click", function (event) {
+  const dropdown = document.getElementById("carrinho-dropdown");
+  const botaoCarrinho = document.getElementById("btn-carrinho");
+
+  // Se o clique NÃO for dentro do dropdown nem no botão do carrinho
+  if (
+    !dropdown.contains(event.target) &&
+    !botaoCarrinho.contains(event.target)
+  ) {
+    dropdown.classList.remove("show");
+  }
+});
