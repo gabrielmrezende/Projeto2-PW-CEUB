@@ -25,7 +25,6 @@
   pointer-events: auto;
 }
 
-
 .carrinho-dropdown h3 {
   margin-top: 0;
   font-size: 2rem;
@@ -49,7 +48,7 @@
   padding: 0.5rem;
   background-color: rgb(243, 243, 243);
   border-radius: 0.3rem;
-  font-family: 'PT Sans Narrow';
+  font-family: "PT Sans Narrow";
 }
 
 .total-carrinho {
@@ -58,7 +57,7 @@
   text-align: right;
   margin-bottom: 1rem;
   color: #222;
-  font-family: 'PT Sans Narrow';
+  font-family: "PT Sans Narrow";
 }
 
 #total-carrinho {
@@ -80,4 +79,207 @@
 
 .carrinho-dropdown button:hover {
   background-color: #444;
+}
+
+/* PAGINA CARRINHO */
+:root {
+  --primaria: #111;
+  --secundaria: #fff;
+  --cinza: #f1f1f1;
+  --verde: #2ecc71;
+  --hover-verde: #27ae60;
+  --fonte-titulo: "Segoe UI", sans-serif;
+}
+
+.pagina-carrinho {
+  padding: 60px 10%;
+  background-color: var(--cinza);
+  font-family: var(--fonte-titulo);
+  color: var(--primaria);
+}
+
+.titulo-carrinho {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.carrinho-container {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.itens-carrinho {
+  flex: 1 1 60%;
+  background-color: var(--secundaria);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  min-height: 200px;
+  text-align: center;
+}
+
+.carrinho-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.carrinho-vazio i {
+  font-size: 5rem;
+  color: #bbb;
+}
+
+.carrinho-vazio p {
+  font-size: 1.8rem;
+  color: #555;
+}
+
+.btn-voltar {
+  margin-top: 10px;
+  padding: 12px 28px;
+  font-size: 1.4rem;
+  background-color: var(--verde);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: var(--hover-verde);
+}
+
+.resumo-carrinho {
+  flex: 1 1 300px;
+  background-color: var(--secundaria);
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.resumo-carrinho h3 {
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.resumo-detalhes p {
+  font-size: 3.6rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.resumo-detalhes .total {
+  font-size: 3.8rem;
+  font-weight: bold;
+}
+
+.resumo-detalhes hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.btn-finalizar {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, #27ae60, #219150);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  margin-top: 30px;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+}
+
+.btn-finalizar.ativo {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .carrinho-container {
+    flex-direction: column;
+  }
+
+  .pagina-carrinho {
+    padding: 40px 20px;
+  }
+
+  .titulo-carrinho {
+    font-size: 2.5rem;
+  }
+
+  .btn-voltar {
+    font-size: 1.2rem;
+  }
+
+  .resumo-carrinho h3 {
+    font-size: 2rem;
+  }
+}
+
+.formas-pagamento {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.formas-pagamento h4 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.icones-pagamento {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.icones-pagamento img {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icones-pagamento img:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+.icones-pagamento {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.icones-pagamento i {
+  font-size: 2.4rem;
+  color: #555;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.icones-pagamento i:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
 }
