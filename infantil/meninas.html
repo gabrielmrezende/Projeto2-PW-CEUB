@@ -22,92 +22,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="../header/header.css" />
     <link rel="stylesheet" href="../masculino/masculino.css" />
     <link rel="stylesheet" href="../cart/carrinho.css" />
-    <link rel="icon" type="image/png" href="../assets/icons/Logo Escuro.svg" />
     <title>LookShop - Sapatos Femininos</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="logo-header">
-          <a href="../index.html"
-            ><img
-              id="logo-header"
-              src="../assets/images/logo-white.png"
-              alt="Logo Branco loja LookShop"
-              style="width: 130px; height: 70px"
-          /></a>
-          <h1>LookShop</h1>
-        </div>
-
-        <nav>
-          <ul>
-            <li><a href="../sobre-nos.html">Sobre nós</a></li>
-
-            <li class="has-dropdown">
-              <a href="masculino.html">
-                Masculino <i class="bx bx-chevron-down"></i>
-              </a>
-              <ul class="dropdown">
-                <li><a href="../masculino/camisetas.html">Camisetas</a></li>
-                <li><a href="../masculino/calcas.html">Calças</a></li>
-                <li><a href="../masculino/tenis.html">Tênis</a></li>
-              </ul>
-            </li>
-
-            <li class="has-dropdown">
-              <a href="#"> Feminino <i class="bx bx-chevron-down"></i> </a>
-              <ul class="dropdown">
-                <li><a href="../feminino/vestidos.html">Vestidos</a></li>
-                <li><a href="../feminino/blusa.html">Blusas</a></li>
-                <li><a href="../feminino/sapatos.html">Sapatos</a></li>
-              </ul>
-            </li>
-
-            <li class="has-dropdown">
-              <a href="#"> Infantil <i class="bx bx-chevron-down"></i> </a>
-              <ul class="dropdown">
-                <li><a href="meninos.html">Meninos</a></li>
-                <li><a href="meninas.html">Meninas</a></li>
-                <li><a href="bebes.html">Bebês</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#">Contato</a></li>
-            <li><a href="../documentacao.html">Documentação</a></li>
-          </ul>
-        </nav>
-
-        <div class="acoes-header">
-          <div class="usuario-area">
-            <a href="../authentication/login.html">
-              <i class="bx bx-user" style="font-size: 30px"></i>
-            </a>
-            <!-- Aqui serão inseridos o nome e o botão logout -->
-          </div>
-          <div class="carrinho">
-            <a href="#" id="btn-carrinho">
-              <i class="bx bx-cart" style="font-size: 30px"></i>
-              <span class="carrinho-count">0</span>
-            </a>
-            <div class="carrinho-dropdown" id="carrinho-dropdown">
-              <h3>Carrinho</h3>
-              <ul id="lista-carrinho"></ul>
-              <div class="total-carrinho">
-                Total: R$ <span id="total-carrinho">0.00</span>
-              </div>
-              <button id="btn-fechar-carrinho">Fechar</button>
-            </div>
-          </div>
-
-          <button id="botao-tema">
-            <i class="bx bx-moon" style="font-size: 30px"></i>
-          </button>
-        </div>
-      </div>
-    </header>
+    <header id="header-placeholder"></header>
 
     <button id="toggle-filtros" class="toggle-filtros">
       <i class="fas fa-bars"></i>
@@ -447,7 +368,7 @@
 
     <!-- Scripts JS -->
     <script src="/../Projeto2-PW-CEUB/script.js"></script>
-    <script src="../header.js"></script>
+    <script src="../header/loadHeader.js"></script>
     <script src="../masculino/masculino.js"></script>
     <script src="/cart/carrinho.js"></script>
   </body>

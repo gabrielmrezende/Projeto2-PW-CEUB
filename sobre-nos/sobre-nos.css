@@ -1,0 +1,95 @@
+.sobre-nos-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 70%;
+  margin: 80px auto 40px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.texto-sobre-nos-bloco {
+  flex: 1;
+  max-width: 600px;
+}
+
+.titulo-sobre-nos {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-family: "PT Sans Narrow", sans-serif;
+  color: #111;
+}
+
+.texto-sobre-nos {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #333;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.imagem-sobre-nos {
+  width: 400px;
+  height: auto;
+  filter: brightness(0); /* Deixa preto */
+}
+
+body.dark-theme .imagem-sobre-nos {
+  filter: brightness(1);
+}
+
+/* DARK THEME */
+body.dark-theme .texto-sobre-nos {
+  color: rgb(235, 235, 235);
+}
+
+body.dark-theme .titulo-sobre-nos {
+  color: rgb(255, 255, 255);
+}
+
+/* Animação de entrada */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.invisivel {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animar {
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+.texto-sobre-nos.animar {
+  animation-delay: 0.5s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-nos-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titulo-sobre-nos {
+    font-size: 2rem;
+  }
+
+  .texto-sobre-nos {
+    font-size: 1.2rem;
+  }
+
+  .imagem-sobre-nos {
+    width: 80%;
+    margin-top: 20px;
+  }
+}
