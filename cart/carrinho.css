@@ -1,9 +1,10 @@
+/* Estilos para o Dropdown do Carrinho (do Header) */
 .carrinho-dropdown {
   position: absolute;
   right: 0;
   top: 50px;
-  width: 38rem; /* 320px */
-  max-height: 30rem; /* 400px */
+  width: 38rem;
+  max-height: 30rem;
   background-color: var(--bg-card, #fff);
   border: 1px solid #ccc;
   padding: 1.2rem;
@@ -12,13 +13,11 @@
   z-index: 1000;
   border-radius: 0.5rem;
   font-family: "Segoe UI", Tahoma, sans-serif;
-
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
 
 .carrinho-dropdown.show {
   opacity: 1;
@@ -44,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Ajustado */
   margin-bottom: 0.75rem;
   padding: 0.5rem;
   background-color: rgb(243, 243, 243);
@@ -54,7 +53,7 @@
 
 .total-carrinho {
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2rem; /* Ajustado */
   text-align: right;
   margin-bottom: 1rem;
   color: #222;
@@ -62,7 +61,7 @@
 }
 
 #total-carrinho {
-  font-size: 2.1rem;
+  font-size: 1.8rem; /* Ajustado */
   font-weight: 500;
 }
 
@@ -73,7 +72,7 @@
   padding: 0.6rem 1.2rem;
   cursor: pointer;
   border-radius: 0.4rem;
-  font-size: 2rem;
+  font-size: 1.6rem; /* Ajustado */
   width: 100%;
   transition: background 0.3s ease;
 }
@@ -82,56 +81,169 @@
   background-color: #444;
 }
 
-/* PAGINA CARRINHO */
+/* ============================================== */
+/* === PÁGINA PRINCIPAL DO CARRINHO - ESTILOS === */
+/* ============================================== */
+
 :root {
   --primaria: #111;
   --secundaria: #fff;
   --cinza: #f1f1f1;
+  --cinza-borda: #e0e0e0;
   --verde: #2ecc71;
   --hover-verde: #27ae60;
+  --vermelho-hover: #e74c3c;
   --fonte-titulo: "Segoe UI", sans-serif;
 }
 
 .pagina-carrinho {
-  padding: 60px 10%;
+  padding: 40px 8%;
   background-color: var(--cinza);
   font-family: var(--fonte-titulo);
   color: var(--primaria);
+  min-height: 80vh;
 }
 
 .titulo-carrinho {
-  font-size: 3rem;
+  font-size: 2.8rem;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  font-weight: 600;
 }
 
 .carrinho-container {
   display: flex;
-  gap: 60px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
 }
 
 .itens-carrinho {
-  flex: 1 1 60%;
+  flex: 1 1 65%; /* Ocupa mais espaço */
   background-color: var(--secundaria);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-  min-height: 200px;
-  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
 }
+
+/* --- ESTILOS PARA OS ITENS INDIVIDUAIS DO CARRINHO (NOVO!) --- */
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+.item-carrinho:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+.item-imagem {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--cinza-borda);
+}
+
+.item-info {
+  flex-grow: 1; /* Faz esta div ocupar o espaço restante */
+}
+
+.item-info h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.item-info p {
+  font-size: 1.4rem;
+  color: #666;
+  margin: 0;
+}
+
+.item-quantidade {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.item-quantidade input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: transparent;
+  -moz-appearance: textfield; /* Remove setas no Firefox */
+}
+.item-quantidade input::-webkit-outer-spin-button,
+.item-quantidade input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Remove setas no Chrome, Safari, etc */
+  margin: 0;
+}
+
+.btn-qtd {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background-color 0.2s;
+}
+
+.btn-qtd:hover {
+  background-color: #e0e0e0;
+}
+
+.item-subtotal {
+  font-size: 1.6rem;
+  font-weight: 600;
+  min-width: 90px;
+  text-align: right;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn-remover .bx-trash {
+  font-size: 2.4rem;
+  color: #aaa;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.btn-remover:hover .bx-trash {
+  color: var(--vermelho-hover);
+  transform: scale(1.1);
+}
+
+/* --- FIM DOS NOVOS ESTILOS --- */
 
 .carrinho-vazio {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 60px 20px;
   gap: 20px;
 }
 
 .carrinho-vazio i {
-  font-size: 5rem;
-  color: #bbb;
+  font-size: 6rem;
+  color: #ccc;
 }
 
 .carrinho-vazio p {
@@ -155,47 +267,54 @@
   background-color: var(--hover-verde);
 }
 
+/* Resumo do Carrinho */
 .resumo-carrinho {
   flex: 1 1 300px;
   background-color: var(--secundaria);
   padding: 32px;
-  border-radius: 20px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  position: sticky; /* Fica fixo ao rolar a página */
+  top: 120px;
 }
 
 .resumo-carrinho h3 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   margin-bottom: 25px;
   text-align: center;
+  font-weight: 600;
 }
 
 .resumo-detalhes p {
-  font-size: 3.6rem;
+  font-size: 1.6rem;
   display: flex;
   justify-content: space-between;
   margin: 16px 0;
 }
 
 .resumo-detalhes .total {
-  font-size: 3.8rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+}
+.resumo-detalhes .total strong {
+  font-size: 2.2rem;
 }
 
 .resumo-detalhes hr {
   margin: 20px 0;
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--cinza-borda);
 }
 
 .btn-finalizar {
   width: 100%;
   padding: 16px;
   font-size: 1.6rem;
+  font-weight: 600;
   background: linear-gradient(135deg, #27ae60, #219150);
   color: white;
   border: none;
   border-radius: 12px;
-  margin-top: 30px;
+  margin-top: 20px;
   opacity: 0.6;
   cursor: not-allowed;
   transition: all 0.3s ease;
@@ -204,83 +323,69 @@
 .btn-finalizar.ativo {
   opacity: 1;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
 }
 
-@media (max-width: 768px) {
-  .carrinho-container {
-    flex-direction: column;
-  }
-
-  .pagina-carrinho {
-    padding: 40px 20px;
-  }
-
-  .titulo-carrinho {
-    font-size: 2.5rem;
-  }
-
-  .btn-voltar {
-    font-size: 1.2rem;
-  }
-
-  .resumo-carrinho h3 {
-    font-size: 2rem;
-  }
+.btn-finalizar.ativo:hover {
+  transform: translateY(-2px);
 }
 
+/* Formas de Pagamento */
 .formas-pagamento {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
 }
 
 .formas-pagamento h4 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  color: #444;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #666;
+  font-weight: 500;
 }
 
 .icones-pagamento {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 12px;
 }
 
 .icones-pagamento img {
-  width: 50px;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  background-color: #fff;
-  padding: 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 25px;
+  width: auto;
+  opacity: 0.7;
 }
 
-.icones-pagamento img:hover {
-  transform: scale(1.1);
-  background-color: #f0f0f0;
+/* Responsividade */
+@media (max-width: 992px) {
+  .carrinho-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .resumo-carrinho {
+    position: static; /* Volta ao fluxo normal em telas menores */
+  }
 }
 
-.icones-pagamento {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.icones-pagamento i {
-  font-size: 2.4rem;
-  color: #555;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.icones-pagamento i:hover {
-  background-color: #ddd;
-  transform: scale(1.1);
+@media (max-width: 600px) {
+  .pagina-carrinho {
+    padding: 30px 5%;
+  }
+  .item-carrinho {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  .item-info {
+    margin-top: 10px;
+  }
+  .item-quantidade,
+  .item-subtotal {
+    margin-top: 15px;
+  }
+  .btn-remover {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
 }
