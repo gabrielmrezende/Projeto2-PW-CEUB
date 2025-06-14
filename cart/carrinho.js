@@ -1,3 +1,5 @@
+console.log("carrinho.js carregado");
+
 document.addEventListener("DOMContentLoaded", () => {
   const botoesAdicionar = document.querySelectorAll(".btn-adicionar");
   const contadorCarrinho = document.querySelector(".carrinho-count");
@@ -7,7 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.getElementById("carrinho-dropdown");
   const fecharBtn = document.getElementById("btn-fechar-carrinho");
 
-  // Inicializa carrinho
+  // Proteção contra elementos ausentes
+  if (
+    !contadorCarrinho ||
+    !listaCarrinho ||
+    !totalCarrinho ||
+    !botaoCarrinho ||
+    !dropdown ||
+    !fecharBtn
+  ) {
+    console.warn(
+      "⚠️ Elementos do carrinho não encontrados. Verifique se estão presentes nesta página."
+    );
+    return;
+  }
+
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
   function atualizarContador() {
@@ -58,11 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Inicialização
   atualizarContador();
   atualizarDropdown();
 
-  // Mostrar/ocultar carrinho com animação
   botaoCarrinho.addEventListener("click", (e) => {
     e.preventDefault();
     dropdown.classList.toggle("show");
@@ -71,17 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
   fecharBtn.addEventListener("click", () => {
     dropdown.classList.remove("show");
   });
-});
 
-document.addEventListener("click", function (event) {
-  const dropdown = document.getElementById("carrinho-dropdown");
-  const botaoCarrinho = document.getElementById("btn-carrinho");
-
-  // Se o clique NÃO for dentro do dropdown nem no botão do carrinho
-  if (
-    !dropdown.contains(event.target) &&
-    !botaoCarrinho.contains(event.target)
-  ) {
-    dropdown.classList.remove("show");
-  }
+  document.addEventListener("click", function (event) {
+    if (
+      !dropdown.contains(event.target) &&
+      !botaoCarrinho.contains(event.target)
+    ) {
+      dropdown.classList.remove("show");
+    }
+  });
 });
