@@ -125,38 +125,111 @@
 
           <div class="filtro-grupo">
             <h4>Categoria</h4>
-            <label><input type="checkbox" /> Camisetas</label>
-            <label><input type="checkbox" /> Calças</label>
-            <label><input type="checkbox" /> Tênis</label>
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="blusas" />
+              Blusas</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="vestidos" />
+              Vestidos</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="sapatos" />
+              Sapatos</label
+            >
           </div>
 
           <div class="filtro-grupo">
-            <h4>Tamanho</h4>
-            <label><input type="checkbox" /> P</label>
-            <label><input type="checkbox" /> M</label>
-            <label><input type="checkbox" /> G</label>
-            <label><input type="checkbox" /> GG</label>
+            <h4>Tamanho (Roupas)</h4>
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="P" />
+              P</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="M" />
+              M</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="G" />
+              G</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="GG" />
+              GG</label
+            >
+          </div>
+
+          <div class="filtro-grupo">
+            <h4>Tamanho (Sapatos)</h4>
+            <label
+              ><input type="checkbox" data-tipo="tamanho-sapato" value="35" />
+              35</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-sapato" value="36" />
+              36</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-sapato" value="37" />
+              37</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-sapato" value="38" />
+              38</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-sapato" value="39" />
+              39</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Cor</h4>
-            <label><input type="checkbox" /> Preto</label>
-            <label><input type="checkbox" /> Azul</label>
-            <label><input type="checkbox" /> Branco</label>
+            <label
+              ><input type="checkbox" data-tipo="cor" value="preto" />
+              Preto</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="branco" />
+              Branco</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="azul" />
+              Azul</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="amarelo" />
+              Amarelo</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Preço</h4>
-            <label><input type="checkbox" /> Até R$ 50</label>
-            <label><input type="checkbox" /> R$ 51 - R$ 150</label>
-            <label><input type="checkbox" /> Acima de R$ 150</label>
+            <label
+              ><input type="checkbox" data-tipo="preco" value="0-100" /> Até R$
+              100</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="101-200" /> R$
+              101 - R$ 200</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="201-infinity" />
+              Acima de R$ 200</label
+            >
           </div>
         </aside>
 
         <section class="categoria-masculino">
           <h2>Moda Feminina</h2>
           <div class="produtos-grid">
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="sapatos"
+              data-tamanho-sapato="36 37 38"
+              data-cor="preto"
+              data-preco="49.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato12.png"
                 alt="Tênis de Corrida"
@@ -172,8 +245,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="vestidos"
+              data-tamanho-roupa="P M G"
+              data-cor="azul"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/feminino/vestidos/vestido7.png"
                 alt="Macacão Jeans"
@@ -189,8 +267,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="blusas"
+              data-tamanho-roupa="M G"
+              data-cor="azul"
+              data-preco="103.75"
+            >
               <img
                 src="../assets/images/feminino/blusas/blusa6.png"
                 alt="Camisa De Botão Azul Claro"
@@ -206,8 +289,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="vestidos"
+              data-tamanho-roupa="P M G"
+              data-cor="azul"
+              data-preco="109.90"
+            >
               <img
                 src="../assets/images/feminino/vestidos/vestido9.png"
                 alt="Short Macacão Jeans"
@@ -223,8 +311,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="blusas"
+              data-tamanho-roupa="P M G"
+              data-cor="preto"
+              data-preco="89.90"
+            >
               <img
                 src="../assets/images/feminino/blusas/blusa7.png"
                 alt="Blusa Manga Longa"
@@ -240,8 +333,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="sapatos"
+              data-tamanho-sapato="37 38"
+              data-cor="preto"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato5.png"
                 alt="Salto Alto Feminino"
@@ -257,8 +355,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="vestidos"
+              data-tamanho-roupa="M G"
+              data-cor="azul"
+              data-preco="138.98"
+            >
               <img
                 src="../assets/images/feminino/vestidos/vestido10.png"
                 alt="Vestido Azul Praia"
@@ -274,8 +377,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="blusas"
+              data-tamanho-roupa="M G GG"
+              data-cor="preto"
+              data-preco="299.90"
+            >
               <img
                 src="../assets/images/feminino/blusas/blusa8.png"
                 alt="Blazer Executivo Masculino"
@@ -291,8 +399,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="vestidos"
+              data-tamanho-roupa="P M"
+              data-cor="preto"
+              data-preco="100.00"
+            >
               <img
                 src="../assets/images/feminino/vestidos/vestido11.png"
                 alt="Vestido Casual Bolinha"
@@ -308,8 +421,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="sapatos"
+              data-tamanho-sapato="38 39"
+              data-cor="preto"
+              data-preco="159.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato9.png"
                 alt="Bota de Couro Cano Alto"
@@ -325,8 +443,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="vestidos"
+              data-tamanho-roupa="P M"
+              data-cor="amarelo"
+              data-preco="76.50"
+            >
               <img
                 src="../assets/images/feminino/vestidos/vestido12.png"
                 alt="Vestido Amarelo"
@@ -342,8 +465,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="blusas"
+              data-tamanho-roupa="P M"
+              data-cor="branco"
+              data-preco="138.98"
+            >
               <img
                 src="../assets/images/feminino/blusas/blusa9.png"
                 alt="Blusa Decotada Branca"

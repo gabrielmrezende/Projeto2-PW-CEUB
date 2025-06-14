@@ -125,38 +125,87 @@
 
           <div class="filtro-grupo">
             <h4>Categoria</h4>
-            <label><input type="checkbox" /> Camisetas</label>
-            <label><input type="checkbox" /> Calças</label>
-            <label><input type="checkbox" /> Tênis</label>
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="corrida" />
+              Corrida</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="social" />
+              Social</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Tamanho</h4>
-            <label><input type="checkbox" /> P</label>
-            <label><input type="checkbox" /> M</label>
-            <label><input type="checkbox" /> G</label>
-            <label><input type="checkbox" /> GG</label>
+            <label
+              ><input type="checkbox" data-tipo="tamanho" value="35" />
+              35</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho" value="36" />
+              36</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho" value="37" />
+              37</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho" value="38" />
+              38</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho" value="39" />
+              39</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Cor</h4>
-            <label><input type="checkbox" /> Preto</label>
-            <label><input type="checkbox" /> Azul</label>
-            <label><input type="checkbox" /> Branco</label>
+            <label
+              ><input type="checkbox" data-tipo="cor" value="preto" />
+              Preto</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="azul" />
+              Azul</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="branco" />
+              Branco</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="dourado" />
+              Dourado</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Preço</h4>
-            <label><input type="checkbox" /> Até R$ 50</label>
-            <label><input type="checkbox" /> R$ 51 - R$ 150</label>
-            <label><input type="checkbox" /> Acima de R$ 150</label>
+            <label
+              ><input type="checkbox" data-tipo="preco" value="0-100" /> Até R$
+              100</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="101-200" /> R$
+              101 - R$ 200</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="201-infinity" />
+              Acima de R$ 200</label
+            >
           </div>
         </aside>
 
         <section class="categoria-masculino">
           <h2>Sapatos</h2>
           <div class="produtos-grid">
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="corrida"
+              data-tamanho="36 37 38"
+              data-cor="preto"
+              data-preco="49.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato12.png"
                 alt="Tênis de Corrida"
@@ -173,7 +222,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="35 36 37"
+              data-cor="preto"
+              data-preco="109.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato1.png"
                 alt="Sapatilha Feminina Zebrada"
@@ -190,7 +245,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="35 36 37"
+              data-cor="dourado"
+              data-preco="119.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato2.png"
                 alt="Sapatilha Feminina Dourada"
@@ -207,7 +268,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="37 38 39"
+              data-cor="azul"
+              data-preco="209.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato3.png"
                 alt="Scarpin Salto Alto Azul"
@@ -224,7 +291,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="36 37 38"
+              data-cor="preto"
+              data-preco="189.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato4.png"
                 alt="Sapatilha Fechada Feminina"
@@ -241,7 +314,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="37 38"
+              data-cor="preto"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato5.png"
                 alt="Salto Alto Feminino"
@@ -258,7 +337,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="35 36 37"
+              data-cor="preto"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato6.png"
                 alt="Sapatilha Alta Feminina"
@@ -275,7 +360,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="37 38 39"
+              data-cor="preto"
+              data-preco="299.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato7.png"
                 alt="Bota Cano Baixo Feminino"
@@ -292,7 +383,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="37 38 39"
+              data-cor="preto"
+              data-preco="138.98"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato8.png"
                 alt="Bota Cano Baixo com Zíper"
@@ -309,7 +406,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho="38 39"
+              data-cor="preto"
+              data-preco="159.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato9.png"
                 alt="Bota de Couro Cano Alto"
@@ -326,7 +429,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="corrida"
+              data-tamanho="36 37 38"
+              data-cor="branco"
+              data-preco="159.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato10.png"
                 alt="Tênis de Corrida Branco"
@@ -343,7 +452,13 @@
               </button>
             </div>
 
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="corrida"
+              data-tamanho="35 36 37 38 39"
+              data-cor="preto"
+              data-preco="249.90"
+            >
               <img
                 src="../assets/images/feminino/sapatos/sapato11.png"
                 alt="Tênis All Stars"

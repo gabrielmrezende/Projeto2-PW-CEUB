@@ -125,38 +125,91 @@
 
           <div class="filtro-grupo">
             <h4>Categoria</h4>
-            <label><input type="checkbox" /> Camisetas</label>
-            <label><input type="checkbox" /> Calças</label>
-            <label><input type="checkbox" /> Tênis</label>
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="casual" />
+              Casual / Camiseta</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="social" />
+              Social / Camisa</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="blazer" />
+              Blazer</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Tamanho</h4>
-            <label><input type="checkbox" /> P</label>
-            <label><input type="checkbox" /> M</label>
-            <label><input type="checkbox" /> G</label>
-            <label><input type="checkbox" /> GG</label>
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="P" />
+              P</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="M" />
+              M</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="G" />
+              G</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-roupa" value="GG" />
+              GG</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Cor</h4>
-            <label><input type="checkbox" /> Preto</label>
-            <label><input type="checkbox" /> Azul</label>
-            <label><input type="checkbox" /> Branco</label>
+            <label
+              ><input type="checkbox" data-tipo="cor" value="preto" />
+              Preto</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="branco" />
+              Branco</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="azul" />
+              Azul</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="marrom" />
+              Marrom</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="cinza" />
+              Cinza</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Preço</h4>
-            <label><input type="checkbox" /> Até R$ 50</label>
-            <label><input type="checkbox" /> R$ 51 - R$ 150</label>
-            <label><input type="checkbox" /> Acima de R$ 150</label>
+            <label
+              ><input type="checkbox" data-tipo="preco" value="0-80" /> Até R$
+              80</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="81-200" /> R$ 81
+              - R$ 200</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="201-infinity" />
+              Acima de R$ 200</label
+            >
           </div>
         </aside>
 
         <section class="categoria-masculino">
           <h2>Camisetas</h2>
           <div class="produtos-grid">
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casual"
+              data-tamanho-roupa="P M G"
+              data-cor="preto"
+              data-preco="49.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta1.png"
                 alt="Camiseta Gola V de Algodão Premium"
@@ -172,8 +225,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho-roupa="M G GG"
+              data-cor="branco"
+              data-preco="119.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta2.png"
                 alt="Camisa Social Manga Longa"
@@ -189,8 +247,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho-roupa="M G"
+              data-cor="branco"
+              data-preco="199.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta3.png"
                 alt="Camisa Social Slim Executiva"
@@ -206,8 +269,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho-roupa="G GG"
+              data-cor="marrom"
+              data-preco="209.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta4.png"
                 alt="Camisa Social Marrom Manga Longa"
@@ -223,8 +291,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="blazer"
+              data-tamanho-roupa="M G GG"
+              data-cor="cinza"
+              data-preco="189.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta5.png"
                 alt="Blazer Social Cinza"
@@ -240,8 +313,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casual"
+              data-tamanho-roupa="P M G"
+              data-cor="preto"
+              data-preco="89.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta6.png"
                 alt="Camiseta Manga Longa Gola Redonda"
@@ -257,8 +335,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casual"
+              data-tamanho-roupa="M G"
+              data-cor="preto"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta7.png"
                 alt="Camisa Manga Longa com Capuz"
@@ -274,8 +357,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho-roupa="P M"
+              data-cor="azul"
+              data-preco="299.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta8.png"
                 alt="Camiseta de Botão Azul"
@@ -291,8 +379,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho-roupa="M G"
+              data-cor="azul"
+              data-preco="249.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta9.png"
                 alt="Camiseta Social Azul Marinho"
@@ -308,8 +401,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="social"
+              data-tamanho-roupa="P M G GG"
+              data-cor="branco"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta10.png"
                 alt="Camisa Branca"
@@ -325,8 +423,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casual"
+              data-tamanho-roupa="M G"
+              data-cor="azul"
+              data-preco="112.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta11.png"
                 alt="Camiseta Manga Longa Jeans"
@@ -342,8 +445,13 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casual"
+              data-tamanho-roupa="M G"
+              data-cor="vermelho"
+              data-preco="159.90"
+            >
               <img
                 src="../assets/images/masculino/camisetas/camiseta12.png"
                 alt="Camisa Xadrez Flanelado"

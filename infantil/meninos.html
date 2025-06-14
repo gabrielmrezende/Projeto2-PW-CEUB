@@ -124,42 +124,95 @@
           <h3>Filtrar por</h3>
 
           <div class="filtro-grupo">
-            <h4>Categoria</h4>
-            <label><input type="checkbox" /> Camisetas</label>
-            <label><input type="checkbox" /> Calças</label>
-            <label><input type="checkbox" /> Tênis</label>
+            <h4>Peça</h4>
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="conjunto" />
+              Conjuntos</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="casaco" />
+              Casacos / Suéter</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="camisa" />
+              Camisas</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="categoria" value="calca" />
+              Calças</label
+            >
           </div>
 
           <div class="filtro-grupo">
-            <h4>Tamanho</h4>
-            <label><input type="checkbox" /> P</label>
-            <label><input type="checkbox" /> M</label>
-            <label><input type="checkbox" /> G</label>
-            <label><input type="checkbox" /> GG</label>
+            <h4>Tamanho (Idade)</h4>
+            <label
+              ><input type="checkbox" data-tipo="tamanho-infantil" value="2" />
+              2 anos</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-infantil" value="4" />
+              4 anos</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-infantil" value="6" />
+              6 anos</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="tamanho-infantil" value="8" />
+              8 anos</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Cor</h4>
-            <label><input type="checkbox" /> Preto</label>
-            <label><input type="checkbox" /> Azul</label>
-            <label><input type="checkbox" /> Branco</label>
+            <label
+              ><input type="checkbox" data-tipo="cor" value="azul" />
+              Azul</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="branco" />
+              Branco</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="rosa" />
+              Rosa</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="cor" value="verde" />
+              Verde</label
+            >
           </div>
 
           <div class="filtro-grupo">
             <h4>Preço</h4>
-            <label><input type="checkbox" /> Até R$ 50</label>
-            <label><input type="checkbox" /> R$ 51 - R$ 150</label>
-            <label><input type="checkbox" /> Acima de R$ 150</label>
+            <label
+              ><input type="checkbox" data-tipo="preco" value="0-100" /> Até R$
+              100</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="101-200" /> R$
+              101 - R$ 200</label
+            >
+            <label
+              ><input type="checkbox" data-tipo="preco" value="201-infinity" />
+              Acima de R$ 200</label
+            >
           </div>
         </aside>
 
         <section class="categoria-masculino">
           <h2>Meninos</h2>
           <div class="produtos-grid">
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="camisa"
+              data-tamanho-infantil="6 8"
+              data-cor="azul"
+              data-preco="199.90"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos1.png"
-                alt="Camiseta Preta"
+                alt="Camiseta De Botão Listrada"
               />
               <h3>CAMISETA DE BOTÃO LISTRADA</h3>
               <p class="preco"><span>R$ 319,00</span> R$ 199,90</p>
@@ -172,11 +225,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="vestido"
+              data-tamanho-infantil="2 4"
+              data-cor="rosa"
+              data-preco="78.98"
+            >
               <img
                 src="../assets/images/infantil/bebes/bebe5.png"
-                alt="Tênis Esportivo Preto"
+                alt="Vestido Colorido"
               />
               <h3>VESTIDO COLORIDO</h3>
               <p class="preco"><span>R$ 219,90</span> R$ 78,98</p>
@@ -189,11 +247,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="calca"
+              data-tamanho-infantil="4 6 8"
+              data-cor="azul"
+              data-preco="119.90"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos3.png"
-                alt="Tênis Esportivo Azul"
+                alt="Calça Jeans Infantil"
               />
               <h3>CALÇA JEANS INFANTIL</h3>
               <p class="preco"><span>R$159,90</span> R$ 119,90</p>
@@ -206,11 +269,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="conjunto"
+              data-tamanho-infantil="4 6"
+              data-cor="azul"
+              data-preco="109.89"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos16.png"
-                alt="Tênis Esportivo Vermelho"
+                alt="Conjuntinho Mágico"
               />
               <h3>CONJUNTINHO MÁGICO</h3>
               <p>R$ 109,89</p>
@@ -223,11 +291,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="calca"
+              data-tamanho-infantil="2 4"
+              data-cor="azul"
+              data-preco="69.90"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos5.png"
-                alt="Tênis Esportivo Preto"
+                alt="Calça Jeans Azul Clara"
               />
               <h3>CALÇA JEANS AZUL CLARA</h3>
               <p class="preco"><span>R$ 219,90</span> R$ 69,90</p>
@@ -240,11 +313,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="calca"
+              data-tamanho-infantil="4 6"
+              data-cor="bege"
+              data-preco="110.99"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos6.png"
-                alt="Camisa Polo"
+                alt="Calça Sarja Infantil"
               />
               <h3>CALÇA SARJA INFANTIL</h3>
               <p class="preco"><span>R$119,20</span> R$ 110,99</p>
@@ -257,11 +335,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="camisa"
+              data-tamanho-infantil="6 8"
+              data-cor="branco"
+              data-preco="79.90"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos7.png"
-                alt="Bermuda Jeans"
+                alt="Camisa Botão Clara"
               />
               <h3>CAMISA BOTÃO CLARA</h3>
               <p>R$ 79,90</p>
@@ -274,11 +357,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casaco"
+              data-tamanho-infantil="8"
+              data-cor="vermelho"
+              data-preco="259.90"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos8.png"
-                alt="Jaqueta de Couro"
+                alt="Suéter Infantil"
               />
               <h3>SUÉTER INFANTIL</h3>
               <p>R$ 259,90</p>
@@ -291,11 +379,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casaco"
+              data-tamanho-infantil="4 6"
+              data-cor="azul"
+              data-preco="138.98"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos9.png"
-                alt="Relógio Masculino"
+                alt="Casaco Frio Infantil"
               />
               <h3>CASACO FRIO INFANTIL</h3>
               <p class="preco"><span>R$102,20</span> R$ 138,98</p>
@@ -308,11 +401,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="casaco"
+              data-tamanho-infantil="2 4"
+              data-cor="rosa"
+              data-preco="129.90"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos10.png"
-                alt="Relógio Masculino"
+                alt="Suéter Rosa Infantil"
               />
               <h3>SUÉTER ROSA INFANTIL</h3>
               <p>R$ 129,90</p>
@@ -325,11 +423,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="conjunto"
+              data-tamanho-infantil="4 6"
+              data-cor="preto"
+              data-preco="99.99"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos11.png"
-                alt="Relógio Masculino"
+                alt="Conjunto Skatista"
               />
               <h3>CONJUNTO SKATISTA</h3>
               <p>R$ 99,99</p>
@@ -342,11 +445,16 @@
                 Adicionar ao carrinho
               </button>
             </div>
-
-            <div class="produto-card">
+            <div
+              class="produto-card"
+              data-categoria="camisa"
+              data-tamanho-infantil="6 8"
+              data-cor="azul"
+              data-preco="164.68"
+            >
               <img
                 src="../assets/images/infantil/meninos/meninos12.png"
-                alt="Relógio Masculino"
+                alt="Camisa De Botão Manga Curta"
               />
               <h3>CAMISA DE BOTÃO MANGA CURTA</h3>
               <p>R$ 164,68</p>
