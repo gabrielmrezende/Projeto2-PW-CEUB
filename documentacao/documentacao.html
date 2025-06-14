@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (function () {
+        const temaSalvo = localStorage.getItem("tema");
+        if (temaSalvo === "escuro") {
+          document.documentElement.classList.add("dark-theme");
+        }
+      })();
+    </script>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="documentacao.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../header/header.css" />
+    <link rel="stylesheet" href="../cart/carrinho.css">
+    <title>LookShop - Documentação</title>
+  </head>
+  <body>
+    <header id="header-placeholder"></header>
+
+    <section class="integrantes">
+      <h2>Integrantes</h2>
+      <p>Gabriel Mafaldo Rezende - 22350300</p>
+      <p>Júlia Coelho Rodrigues - 22408388</p>
+      <p>Ricardo Souza Moaes - 22350874</p>
+      <p>Victor Rithelly Carvalho França - 22452781</p>
+      <p>Thiago Hack Ruthes - 22352921</p>
+    </section>
+
+    <section class="documentacao">
+      <div class="container">
+        <h2>Documentação</h2>
+        <ul class="lista-documentos">
+          <li>
+            <a
+              href="assets/documents/PW - PROJETO FINAL - 2º bim.pdf"
+              target="_blank"
+              download
+            >
+              <i class="bx bx-download"></i> Instruções Projeto final
+            </a>
+          </li>
+          <li>
+            <a href="assets/documents/wireframe.zip" target="_blank" download>
+              <i class="bx bx-download"></i> Wireframe LookShop
+            </a>
+          </li>
+          <li>
+            <a
+              href="assets/documents/documentacao_prototipo.odt"
+              target="_blank"
+              download
+            >
+              <i class="bx bx-download"></i> Documentação Protótipo
+            </a>
+          </li>
+          <li>
+            <a href="assets/documents/prototipo.zip" target="_blank" download>
+              <i class="bx bx-download"></i> Protótipo
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://github.com/gabrielmrezende/Projeto2-PW-CEUB"
+              target="_blank"
+            >
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="documentacao.js"></script>
+    <script src="../header/loadHeader.js"></script>
+    <script src="cart/carrinho.js"></script>
+  </body>
+</html>

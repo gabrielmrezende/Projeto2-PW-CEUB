@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="logo-header">
+    <a href="{{root}}index.html"
+      ><img
+        id="logo-header"
+        src="{{root}}assets/images/logo-white.png"
+        alt="Logo Branco loja LookShop"
+        style="width: 130px; height: 70px"
+    /></a>
+    <h1>LookShop</h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="{{root}}sobre-nos/sobre-nos.html">Sobre nós</a></li>
+
+      <li class="has-dropdown">
+        <a href="{{root}}masculino/masculino.html">
+          Masculino <i class="bx bx-chevron-down"></i>
+        </a>
+        <ul class="dropdown">
+          <li><a href="{{root}}masculino/camisetas.html">Camisetas</a></li>
+          <li><a href="{{root}}masculino/calcas.html">Calças</a></li>
+          <li><a href="{{root}}masculino/tenis.html">Tênis</a></li>
+        </ul>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#"> Feminino <i class="bx bx-chevron-down"></i> </a>
+        <ul class="dropdown">
+          <li><a href="{{root}}feminino/vestidos.html">Vestidos</a></li>
+          <li><a href="{{root}}feminino/blusa.html">Blusas</a></li>
+          <li><a href="{{root}}feminino/sapatos.html">Sapatos</a></li>
+        </ul>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#"> Infantil <i class="bx bx-chevron-down"></i> </a>
+        <ul class="dropdown">
+          <li><a href="{{root}}infantil/meninos.html">Meninos</a></li>
+          <li><a href="{{root}}infantil/meninas.html">Meninas</a></li>
+          <li><a href="{{root}}infantil/bebes.html">Bebês</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#footer">Contato</a></li>
+      <li><a href="{{root}}documentacao/documentacao.html">Documentação</a></li>
+    </ul>
+  </nav>
+
+  <div class="acoes-header">
+    <div class="usuario-area">
+      <a href="{{root}}authentication/login.html">
+        <i class="bx bx-user" style="font-size: 30px"></i>
+      </a>
+      <!-- Aqui serão inseridos o nome e o botão logout -->
+    </div>
+    <div class="carrinho">
+      <a href="{{root}}cart/carrinho.html" id="btn-carrinho">
+        <i class="bx bx-cart" style="font-size: 30px"></i>
+        <span class="carrinho-count">0</span>
+      </a>
+      <div class="carrinho-dropdown" id="carrinho-dropdown">
+        <h3>Carrinho</h3>
+        <ul id="lista-carrinho"></ul>
+        <div class="total-carrinho">
+          Total: R$ <span id="total-carrinho">0.00</span>
+        </div>
+        <button id="btn-fechar-carrinho">Fechar</button>
+      </div>
+    </div>
+
+    <button id="botao-tema">
+      <i class="bx bx-moon" style="font-size: 30px"></i>
+    </button>
+  </div>
+</div>
