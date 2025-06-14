@@ -1,3 +1,23 @@
+console.log("carrinho.js carregado");
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM totalmente carregado");
+
+  const botaoCarrinho = document.getElementById("btn-carrinho");
+  const dropdown = document.querySelector(".carrinho-dropdown");
+
+  if (!botaoCarrinho || !dropdown) {
+    console.warn("Botão ou dropdown do carrinho NÃO encontrado!");
+    return;
+  }
+
+  botaoCarrinho.addEventListener("click", (e) => {
+    console.log("Botão do carrinho clicado");
+  });
+
+  // ... o restante do seu código ...
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const botoesAdicionar = document.querySelectorAll(".btn-adicionar");
   const contadorCarrinho = document.querySelector(".carrinho-count");

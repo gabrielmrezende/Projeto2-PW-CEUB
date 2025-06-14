@@ -306,6 +306,10 @@ body.dark-theme .usuario-dropdown li:hover {
   background-color: #313131;
 }
 
+.preco span {
+  text-decoration: line-through;
+}
+
 /* FOOTER */
 footer {
   background-color: #222;
