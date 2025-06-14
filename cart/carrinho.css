@@ -1,22 +1,26 @@
-/* Estilos para o Dropdown do Carrinho (do Header) */
+/* ========================================================== */
+/* === ESTILOS ATUALIZADOS PARA O DROPDOWN DO CARRINHO    === */
+/* ========================================================== */
+
+/* --- Layout Geral do Dropdown --- */
 .carrinho-dropdown {
   position: absolute;
   right: 0;
-  top: 50px;
-  width: 38rem;
-  max-height: 30rem;
-  background-color: var(--bg-card, #fff);
-  border: 1px solid #ccc;
-  padding: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
-  z-index: 1000;
-  border-radius: 0.5rem;
+  top: 120%;
+  width: 400px;
+  max-height: 500px;
   font-family: "Segoe UI", Tahoma, sans-serif;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  z-index: 1000;
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .carrinho-dropdown.show {
@@ -26,65 +30,179 @@
 }
 
 .carrinho-dropdown h3 {
-  margin-top: 0;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  padding: 15px 20px;
+  margin: 0;
+  font-weight: 600;
+  border-bottom: 1px solid #eaeaea;
+  color: #111;
 }
 
 .carrinho-dropdown ul {
   list-style: none;
-  padding-left: 0;
-  margin-bottom: 1rem;
+  padding: 10px 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  flex-grow: 1; /* Permite que a lista cresça */
 }
 
-.carrinho-dropdown ul li {
+/* --- Estilo de Cada Item na Lista --- */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.dropdown-item-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item-nome {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.3;
+}
+
+.dropdown-item-preco {
+  font-size: 1.3rem;
+  color: #777;
+}
+
+.dropdown-item-total {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.dropdown-vazio {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #888;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Rodapé do Dropdown (Total e Botões) --- */
+.total-carrinho {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.6rem; /* Ajustado */
-  margin-bottom: 0.75rem;
-  padding: 0.5rem;
-  background-color: rgb(243, 243, 243);
-  border-radius: 0.3rem;
-  font-family: "PT Sans Narrow";
-}
-
-.total-carrinho {
-  font-weight: 400;
-  font-size: 2rem; /* Ajustado */
-  text-align: right;
-  margin-bottom: 1rem;
-  color: #222;
-  font-family: "PT Sans Narrow";
+  padding: 15px 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-top: 1px solid #eaeaea;
+  color: #111;
 }
 
 #total-carrinho {
-  font-size: 1.8rem; /* Ajustado */
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
 }
 
-.carrinho-dropdown button {
-  background-color: #222;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
+/* --- ESTILO NOVO E CORRIGIDO PARA O CONTAINER DOS BOTÕES --- */
+.carrinho-botoes-footer {
+  display: flex;
+  flex-direction: column; /* ALTERAÇÃO PRINCIPAL: EMPILHA OS BOTÕES */
+  gap: 10px;
+  padding: 15px 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Base para os dois botões */
+.carrinho-botoes-footer a,
+.carrinho-botoes-footer button {
+  text-align: center;
+  padding: 12px 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
   cursor: pointer;
-  border-radius: 0.4rem;
-  font-size: 1.6rem; /* Ajustado */
-  width: 100%;
-  transition: background 0.3s ease;
+  border: 2px solid #111;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.carrinho-dropdown button:hover {
-  background-color: #444;
+/* Tema Claro (Padrão) */
+.carrinho-botoes-footer a,
+.carrinho-botoes-footer button {
+  background-color: #111;
+  color: #fff;
 }
 
-/* ============================================== */
-/* === PÁGINA PRINCIPAL DO CARRINHO - ESTILOS === */
-/* ============================================== */
+.carrinho-botoes-footer a:hover,
+.carrinho-botoes-footer button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
 
+/* ========================================================== */
+/* ===       MODO ESCURO PARA DROPDOWN E BOTÕES           === */
+/* ========================================================== */
+body.dark-theme .carrinho-dropdown {
+  background-color: #1f1f1f;
+  border-color: #333;
+}
+
+body.dark-theme .carrinho-dropdown h3,
+body.dark-theme .total-carrinho,
+body.dark-theme .carrinho-botoes-footer {
+  border-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-theme .dropdown-item:hover {
+  background-color: #2a2a2a;
+}
+
+body.dark-theme .dropdown-item-nome,
+body.dark-theme .dropdown-item-total,
+body.dark-theme #total-carrinho {
+  color: #f0f0f0;
+}
+
+body.dark-theme .dropdown-item-preco,
+body.dark-theme .dropdown-vazio {
+  color: #999;
+}
+
+/* Tema Escuro para os botões */
+body.dark-theme .carrinho-botoes-footer a,
+body.dark-theme .carrinho-botoes-footer button {
+  background-color: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+body.dark-theme .carrinho-botoes-footer a:hover,
+body.dark-theme .carrinho-botoes-footer button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* ========================================================== */
+/* === PÁGINA PRINCIPAL DO CARRINHO (sem alterações) === */
+/* ========================================================== */
 :root {
   --primaria: #111;
   --secundaria: #fff;
@@ -95,7 +213,6 @@
   --vermelho-hover: #e74c3c;
   --fonte-titulo: "Segoe UI", sans-serif;
 }
-
 .pagina-carrinho {
   padding: 40px 8%;
   background-color: var(--cinza);
@@ -103,97 +220,86 @@
   color: var(--primaria);
   min-height: 80vh;
 }
-
 .titulo-carrinho {
-  font-size: 2.8rem;
+  font-size: 3.8rem;
   text-align: center;
   margin-bottom: 40px;
-  font-weight: 600;
+  font-weight: 700;
 }
-
 .carrinho-container {
   display: flex;
   gap: 30px;
   align-items: flex-start;
 }
-
 .itens-carrinho {
-  flex: 1 1 65%; /* Ocupa mais espaço */
+  flex: 1 1 65%;
   background-color: var(--secundaria);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
 }
-
-/* --- ESTILOS PARA OS ITENS INDIVIDUAIS DO CARRINHO (NOVO!) --- */
-
 .item-carrinho {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px 10px;
+  gap: 25px;
+  padding: 25px 15px;
   border-bottom: 1px solid var(--cinza-borda);
 }
-
 .item-carrinho:last-child {
-  border-bottom: none; /* Remove a borda do último item */
+  border-bottom: none;
 }
-
 .item-imagem {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--cinza-borda);
 }
-
 .item-info {
-  flex-grow: 1; /* Faz esta div ocupar o espaço restante */
+  flex-grow: 1;
 }
-
 .item-info h4 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
 }
-
 .item-info p {
-  font-size: 1.4rem;
-  color: #666;
+  font-size: 1.7rem;
+  color: #555;
   margin: 0;
+  font-weight: 500;
 }
-
 .item-quantidade {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   border: 1px solid var(--cinza-borda);
   border-radius: 8px;
-  padding: 5px;
+  padding: 8px;
 }
-
 .item-quantidade input {
-  width: 40px;
+  width: 45px;
   text-align: center;
   border: none;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
   background-color: transparent;
-  -moz-appearance: textfield; /* Remove setas no Firefox */
+  -moz-appearance: textfield;
 }
 .item-quantidade input::-webkit-outer-spin-button,
 .item-quantidade input::-webkit-inner-spin-button {
-  -webkit-appearance: none; /* Remove setas no Chrome, Safari, etc */
+  -webkit-appearance: none;
   margin: 0;
 }
-
 .btn-qtd {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border: none;
   background-color: #f0f0f0;
   border-radius: 50%;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  font-weight: 400;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -201,38 +307,31 @@
   line-height: 1;
   transition: background-color 0.2s;
 }
-
 .btn-qtd:hover {
   background-color: #e0e0e0;
 }
-
 .item-subtotal {
-  font-size: 1.6rem;
-  font-weight: 600;
-  min-width: 90px;
+  font-size: 2rem;
+  font-weight: 700;
+  min-width: 110px;
   text-align: right;
+  color: #222;
 }
-
 .btn-remover {
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px;
 }
-
 .btn-remover .bx-trash {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   color: #aaa;
   transition: color 0.2s, transform 0.2s;
 }
-
 .btn-remover:hover .bx-trash {
   color: var(--vermelho-hover);
   transform: scale(1.1);
 }
-
-/* --- FIM DOS NOVOS ESTILOS --- */
-
 .carrinho-vazio {
   display: flex;
   flex-direction: column;
@@ -240,21 +339,18 @@
   padding: 60px 20px;
   gap: 20px;
 }
-
 .carrinho-vazio i {
-  font-size: 6rem;
+  font-size: 7rem;
   color: #ccc;
 }
-
 .carrinho-vazio p {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #555;
 }
-
 .btn-voltar {
   margin-top: 10px;
-  padding: 12px 28px;
-  font-size: 1.4rem;
+  padding: 14px 32px;
+  font-size: 1.6rem;
   background-color: var(--verde);
   color: white;
   border: none;
@@ -262,53 +358,48 @@
   text-decoration: none;
   transition: background 0.3s ease;
 }
-
 .btn-voltar:hover {
   background-color: var(--hover-verde);
 }
-
-/* Resumo do Carrinho */
 .resumo-carrinho {
   flex: 1 1 300px;
   background-color: var(--secundaria);
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-  position: sticky; /* Fica fixo ao rolar a página */
+  position: sticky;
   top: 120px;
 }
-
 .resumo-carrinho h3 {
-  font-size: 2.2rem;
-  margin-bottom: 25px;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
   text-align: center;
   font-weight: 600;
 }
-
 .resumo-detalhes p {
-  font-size: 1.6rem;
+  font-size: 2rem;
   display: flex;
   justify-content: space-between;
-  margin: 16px 0;
+  margin: 20px 0;
 }
-
 .resumo-detalhes .total {
-  font-size: 1.8rem;
+  font-size: 2.6rem;
+  font-weight: 600;
 }
 .resumo-detalhes .total strong {
-  font-size: 2.2rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--primaria);
 }
-
 .resumo-detalhes hr {
-  margin: 20px 0;
+  margin: 25px 0;
   border: none;
   border-top: 1px solid var(--cinza-borda);
 }
-
 .btn-finalizar {
   width: 100%;
-  padding: 16px;
-  font-size: 1.6rem;
+  padding: 18px;
+  font-size: 2rem;
   font-weight: 600;
   background: linear-gradient(135deg, #27ae60, #219150);
   color: white;
@@ -319,54 +410,44 @@
   cursor: not-allowed;
   transition: all 0.3s ease;
 }
-
 .btn-finalizar.ativo {
   opacity: 1;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
 }
-
 .btn-finalizar.ativo:hover {
   transform: translateY(-2px);
 }
-
-/* Formas de Pagamento */
 .formas-pagamento {
   margin-top: 30px;
   text-align: center;
 }
-
 .formas-pagamento h4 {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   margin-bottom: 15px;
   color: #666;
   font-weight: 500;
 }
-
 .icones-pagamento {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
 }
-
 .icones-pagamento img {
   height: 25px;
   width: auto;
   opacity: 0.7;
 }
-
-/* Responsividade */
 @media (max-width: 992px) {
   .carrinho-container {
     flex-direction: column;
     gap: 30px;
   }
   .resumo-carrinho {
-    position: static; /* Volta ao fluxo normal em telas menores */
+    position: static;
   }
 }
-
 @media (max-width: 600px) {
   .pagina-carrinho {
     padding: 30px 5%;
@@ -388,4 +469,124 @@
     top: 15px;
     right: 10px;
   }
+}
+
+/* ============================================== */
+/* ===       ESTILOS PARA CAMPO DE CUPOM        === */
+/* ============================================== */
+
+.cupom-container {
+  display: flex;
+  margin: 25px 0 10px 0;
+}
+
+#cupom-input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-right: none;
+  padding: 12px;
+  font-size: 1.6rem;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+#cupom-input:focus {
+  border-color: var(--verde);
+}
+
+#btn-aplicar-cupom {
+  padding: 12px 20px;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: background-color 0.2s;
+}
+#btn-aplicar-cupom:hover {
+  background-color: #555;
+}
+
+#cupom-mensagem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+#cupom-mensagem.sucesso {
+  color: var(--verde);
+}
+
+#cupom-mensagem.erro {
+  color: var(--vermelho-hover);
+}
+
+.desconto-aplicado {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+/* ============================================== */
+/* ===    ESTILOS PARA O MODAL DE SUCESSO       === */
+/* ============================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de fade-in e zoom quando o modal é exibido */
+.modal-overlay.visivel {
+  opacity: 1;
+}
+
+.modal-overlay.visivel .modal-conteudo {
+  transform: scale(1);
+}
+
+.modal-conteudo .bxs-check-circle {
+  font-size: 8rem;
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.modal-conteudo h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.modal-conteudo p {
+  font-size: 1.7rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.redirecionando-aviso {
+  font-size: 1.4rem;
+  color: #999;
+  margin-top: 25px;
 }

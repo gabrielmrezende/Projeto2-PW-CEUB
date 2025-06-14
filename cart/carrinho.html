@@ -124,11 +124,36 @@
         <aside class="resumo-carrinho">
           <h3>Resumo da Compra</h3>
           <div class="resumo-detalhes">
-            <p><span>Subtotal:</span> <strong>R$ 0,00</strong></p>
+            <p>
+              <span>Subtotal:</span>
+              <strong id="resumo-subtotal">R$ 0,00</strong>
+            </p>
+
+            <p
+              id="linha-desconto"
+              class="desconto-aplicado"
+              style="display: none"
+            >
+              <span>Desconto:</span>
+              <strong id="valor-desconto">- R$ 0,00</strong>
+            </p>
+
             <p><span>Frete:</span> <strong>Grátis</strong></p>
             <hr />
-            <p class="total"><span>Total:</span> <strong>R$ 0,00</strong></p>
+            <p class="total">
+              <span>Total:</span> <strong id="resumo-total">R$ 0,00</strong>
+            </p>
           </div>
+
+          <div class="cupom-container">
+            <input
+              type="text"
+              id="cupom-input"
+              placeholder="Digite seu cupom"
+            />
+            <button id="btn-aplicar-cupom">Aplicar</button>
+          </div>
+          <p id="cupom-mensagem"></p>
           <button class="btn-finalizar" disabled>Finalizar Compra</button>
 
           <div class="formas-pagamento">
@@ -235,6 +260,20 @@
         <p>&copy; 2025 LookShop - Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <div id="modal-compra-sucesso" class="modal-overlay" style="display: none">
+      <div class="modal-conteudo">
+        <i class="bx bxs-check-circle"></i>
+        <h2>Compra Realizada com Sucesso!</h2>
+        <p>
+          Obrigado por comprar na LookShop! Seu pedido já está sendo preparado
+          para o envio.
+        </p>
+        <p class="redirecionando-aviso">
+          Você será redirecionado para a página inicial em breve...
+        </p>
+      </div>
+    </div>
 
     <a href="#">
       <img
