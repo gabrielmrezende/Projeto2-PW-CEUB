@@ -300,6 +300,15 @@ body.dark-theme .usuario-dropdown li:hover {
   font-family: "PT Sans Narrow", sans-serif;
 }
 
+body.dark-theme .produto-card button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+body.dark-theme .produto-card button:hover {
+  background-color: #6e6e6e;
+}
+
 .produto-card button:hover {
   background-color: #313131;
 }
