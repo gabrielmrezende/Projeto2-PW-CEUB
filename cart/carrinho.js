@@ -12,17 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const linkCarrinho = document.createElement("a");
 
-    // --- LINHA CORRIGIDA ---
-    // Removemos a barra inicial para tornar o caminho relativo
+    // --- LÓGICA DE CAMINHO CORRIGIDA ---
     let carrinhoPath = "cart/carrinho.html";
 
+    // Adicionada a verificação para a pasta /cart/
     if (
       window.location.pathname.includes("/masculino/") ||
       window.location.pathname.includes("/feminino/") ||
-      window.location.pathname.includes("/infantil/")
+      window.location.pathname.includes("/infantil/") ||
+      window.location.pathname.includes("/cart/")
     ) {
+      // <-- CONDIÇÃO ADICIONADA AQUI
       carrinhoPath = "../cart/carrinho.html";
     }
+
     linkCarrinho.href = carrinhoPath;
     linkCarrinho.className = "btn-dropdown-estilizado";
     linkCarrinho.textContent = "Ver Carrinho";
