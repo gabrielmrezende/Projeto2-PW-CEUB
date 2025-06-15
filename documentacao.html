@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="documentacao.css" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="cart/carrinho.css" />
     <link rel="icon" type="image/png" href="/assets/icons/Logo Escuro.svg" />
@@ -75,17 +75,19 @@
               </ul>
             </li>
 
-            <li><a href="#">Contato</a></li>
+            <li><a href="index.html#footer">Contato</a></li>
             <li><a href="./documentacao.html">Documentação</a></li>
           </ul>
         </nav>
 
         <div class="acoes-header">
-          <a href="./authentication/login.html"
-            ><i class="bx bx-user" style="font-size: 30px"></i
-          ></a>
+          <div class="usuario-area">
+            <a href="./authentication/login.html">
+              <i class="bx bx-user" style="font-size: 30px"></i>
+            </a>
+          </div>
           <div class="carrinho">
-            <a href="#" id="btn-carrinho">
+            <a href="cart/carrinho.html" id="btn-carrinho">
               <i class="bx bx-cart" style="font-size: 30px"></i>
               <span class="carrinho-count">0</span>
             </a>
@@ -95,14 +97,9 @@
               <div class="total-carrinho">
                 Total: R$ <span id="total-carrinho">0.00</span>
               </div>
-              <button
-                class="btn-finalizar-carrinho"
-                id="btn-finalizar-carrinho"
-              >
-                Finalizar
-              </button>
             </div>
           </div>
+
           <button id="botao-tema">
             <i class="bx bx-moon" style="font-size: 30px"></i>
           </button>

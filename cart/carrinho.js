@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.getElementById("carrinho-dropdown");
 
   if (dropdown && !dropdown.querySelector(".carrinho-botoes-footer")) {
-    const fecharBtnExistente = dropdown.querySelector("#btn-fechar-carrinho");
     const botoesFooter = document.createElement("div");
     botoesFooter.className = "carrinho-botoes-footer";
+
     const linkCarrinho = document.createElement("a");
-    let carrinhoPath = "cart/carrinho.html";
+    let carrinhoPath = "/cart/carrinho.html";
     if (
       window.location.pathname.includes("/masculino/") ||
       window.location.pathname.includes("/feminino/") ||
@@ -20,12 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
       carrinhoPath = "../cart/carrinho.html";
     }
     linkCarrinho.href = carrinhoPath;
-    linkCarrinho.id = "btn-ver-carrinho-dropdown";
+    linkCarrinho.className = "btn-dropdown-estilizado";
     linkCarrinho.textContent = "Ver Carrinho";
+
+    const fecharBtnNovo = document.createElement("button");
+    fecharBtnNovo.type = "button";
+    fecharBtnNovo.className = "btn-dropdown-estilizado";
+    fecharBtnNovo.id = "btn-fechar-carrinho-novo";
+    fecharBtnNovo.textContent = "Fechar";
+
     botoesFooter.appendChild(linkCarrinho);
-    if (fecharBtnExistente) {
-      botoesFooter.appendChild(fecharBtnExistente);
-    }
+    botoesFooter.appendChild(fecharBtnNovo);
+
     dropdown.appendChild(botoesFooter);
   }
 
@@ -99,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const fecharDropdownBtn = document.getElementById("btn-fechar-carrinho");
+  const fecharDropdownBtn = document.getElementById("btn-fechar-carrinho-novo");
   if (fecharDropdownBtn) {
     fecharDropdownBtn.addEventListener("click", () => {
       dropdown.classList.remove("show");
@@ -120,43 +126,28 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarContador();
   atualizarDropdown();
 
-  // --- LÓGICA ATUALIZADA PARA A PÁGINA carrinho.html COM FINALIZAÇÃO ---
-
   if (document.querySelector(".pagina-carrinho")) {
-    const cuponsValidos = {
-      CEUB10: 0.1,
-      CEUB50: 0.5,
-    };
-
+    const cuponsValidos = { CEUB10: 0.1, CEUB50: 0.5 };
     const cupomInput = document.getElementById("cupom-input");
     const btnAplicarCupom = document.getElementById("btn-aplicar-cupom");
     const cupomMensagem = document.getElementById("cupom-mensagem");
     const btnFinalizar = document.querySelector(".btn-finalizar");
     const modalSucesso = document.getElementById("modal-compra-sucesso");
 
-    // LÓGICA DO BOTÃO DE FINALIZAR COMPRA
     btnFinalizar.addEventListener("click", () => {
-      if (carrinho.length === 0) return; // Não faz nada se o carrinho estiver vazio
-
-      // 1. Mostra o modal de sucesso
+      if (carrinho.length === 0) return;
       modalSucesso.style.display = "flex";
       setTimeout(() => {
         modalSucesso.classList.add("visivel");
-      }, 10); // Pequeno delay para a transição funcionar
-
-      // 2. Limpa o carrinho e o cupom
+      }, 10);
       carrinho = [];
       localStorage.removeItem("carrinho");
       localStorage.removeItem("cupomAplicado");
-
-      // 3. Atualiza a interface (contador do header e dropdown)
       atualizarContador();
       atualizarDropdown();
-
-      // 4. Redireciona para a página inicial após alguns segundos
       setTimeout(() => {
         window.location.href = "../index.html";
-      }, 4000); // 4 segundos de espera
+      }, 4000);
     });
 
     btnAplicarCupom.addEventListener("click", () => {
@@ -164,12 +155,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cuponsValidos[codigo]) {
         const cupom = { codigo: codigo, desconto: cuponsValidos[codigo] };
         localStorage.setItem("cupomAplicado", JSON.stringify(cupom));
-        cupomMensagem.textContent = `Cupom "${codigo}" aplicado com sucesso!`;
+        cupomMensagem.textContent = `Cupom "${codigo}" aplicado!`;
         cupomMensagem.className = "sucesso";
         renderizarPaginaCarrinho();
       } else {
         localStorage.removeItem("cupomAplicado");
-        cupomMensagem.textContent = "Cupom inválido. Tente novamente.";
+        cupomMensagem.textContent = "Cupom inválido.";
         cupomMensagem.className = "erro";
         renderizarPaginaCarrinho();
       }
@@ -191,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     containerItens.innerHTML = "";
     if (carrinho.length === 0) {
-      containerItens.innerHTML = `<div class="carrinho-vazio"><i class="bx bx-shopping-bag"></i><p>Seu carrinho está vazio no momento.</p><a href="../index.html" class="btn-voltar">Explorar Produtos</a></div>`;
+      containerItens.innerHTML = `<div class="carrinho-vazio"><i class="bx bx-shopping-bag"></i><p>Seu carrinho está vazio.</p><a href="../index.html" class="btn-voltar">Explorar Produtos</a></div>`;
       btnFinalizar.setAttribute("disabled", true);
       btnFinalizar.classList.remove("ativo");
       if (linhaDescontoEl) linhaDescontoEl.style.display = "none";
