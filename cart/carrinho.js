@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarDropdown();
 
   if (document.querySelector(".pagina-carrinho")) {
-    const cuponsValidos = { CEUB10: 0.1, CEUB50: 0.5 };
+    const cuponsValidos = { CEUB10: 0.1, CEUB50: 0.5, NITRO: 1.0 };
     const cupomInput = document.getElementById("cupom-input");
     const btnAplicarCupom = document.getElementById("btn-aplicar-cupom");
     const cupomMensagem = document.getElementById("cupom-mensagem");
