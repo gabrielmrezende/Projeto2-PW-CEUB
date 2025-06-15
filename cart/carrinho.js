@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     botoesFooter.className = "carrinho-botoes-footer";
 
     const linkCarrinho = document.createElement("a");
-    let carrinhoPath = "/cart/carrinho.html";
+
+    // --- LINHA CORRIGIDA ---
+    // Removemos a barra inicial para tornar o caminho relativo
+    let carrinhoPath = "cart/carrinho.html";
+
     if (
       window.location.pathname.includes("/masculino/") ||
       window.location.pathname.includes("/feminino/") ||
@@ -235,9 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = e.target;
       const itemDiv = target.closest(".item-carrinho");
       if (!itemDiv) return;
-
       const id = itemDiv.getAttribute("data-id");
-
       if (target.closest(".btn-remover")) {
         carrinho = carrinho.filter((item) => item.id !== id);
       } else if (target.classList.contains("btn-qtd")) {
@@ -257,7 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         return;
       }
-
       salvarCarrinho();
       renderizarPaginaCarrinho();
       atualizarContador();
